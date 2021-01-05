@@ -1,0 +1,21 @@
+
+
+<div id="displayWantedPost">
+    <div id="wantedPost" *ngFor="let post of myWantedPost">
+        <div id="wanted">
+            <h3 id="h3Position">{{post.wantedPosition}}</h3>
+            <p id="pDescription">{{post.wantedDescription}}</p>
+            <p id="pHours">{{post.wantedWorkingHours}}</p>
+        </div>
+    </div>
+    <div id="sendResume">
+        <h3 id="h3Resume">Send us your resume and we will contact you</h3>
+        <form [formGroup]="myForm" (submit)="sendApplication()">
+            <input type="email" name="candidateEmail" id="candidateEmail" placeholder="Enter your Email" formControlName="candidateEmail">
+            <input type="text" name="candidateName" id="candidateName" placeholder="Enter your full name" formControlName="candidateName">
+            <input type="number" name="candidatePhone" id="candidatePhone" placeholder="Enter your phone number" formControlName="candidatePhone">
+            <input type="file" name="candidateResnume" id="candidateResume" placeholder="Upload your resume" formControlName="candidateResnume">
+            <button>Send</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+
+<div id="myMenu">
+<div id="myProducts">
+<div id="menuDivCoffee">
+<div id="h3Div"><h3>Coffee</h3></div>
+    <div id="displayMenuDivCoffee">
+        <div id="menuCoffee" *ngFor="let dish of myCoffeeArry">
+            <div id="dishDivCoffee">
+                <h3>{{dish.dishName}} <fa-icon id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
+                <p id="dishDescription"><span>{{dish.dishDescription}}</span></p>
+                <div id="sizeSelect">
+                    <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
+                        <label for="sizeSmall">{{dish.dishSize[0]}}</label>
+                        <button (click)="selectedSize(dish.dishPrice[0], dish.dishSize[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
+                    </section>
+
+                    <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
+                        <label for="sizeMedium">{{dish.dishSize[1]}}</label>
+                        <button (click)="selectedSize(dish.dishPrice[1], dish.dishSize[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
+                    </section>
+
+                    <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
+                        <label for="sizeLarge">{{dish.dishSize[2]}}</label>
+                        <button (click)="selectedSize(dish.dishPrice[2], dish.dishSize[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
+                    </section>
+                </div>
+            </div>
+            <div id="imgDiv">
+                <img src="{{dish.dishPicture}}">
+            </div>
+            <button (click)="addToCart(dish)">Add To Order <fa-icon *ngIf="activateIcon" id="veganIcon" [icon]="checkIcon" size="2x"></fa-icon></button>
+        </div>
+    </div>
+</div>
+
+<div id="menuDivHotChocolate">
+    <div id="h3Div"><h3>Hot Chocolate</h3></div>
+        <div id="displayMenuDivHotChocolate">
+            <div id="menuHotChocolate" *ngFor="let dish of myHotChocolateArry">
+                <div id="dishDivHotChocolate">
+                    <h3>{{dish.dishName}} <fa-icon id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
+                    <p id="dishDescription"><span>{{dish.dishDescription}}</span></p>
+                    <div id="sizeSelect">
+                        <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
+                            <label for="sizeSmall">{{dish.dishSize[0]}}</label>
+                            <button (click)="selectedSize(dish.dishPrice[0], dish.dishSize[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
+                        </section>
+    
+                        <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
+                            <label for="sizeMedium">{{dish.dishSize[1]}}</label>
+                            <button (click)="selectedSize(dish.dishPrice[1], dish.dishSize[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
+                        </section>
+    
+                        <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
+                            <label for="sizeLarge">{{dish.dishSize[2]}}</label>
+                            <button (click)="selectedSize(dish.dishPrice[2], dish.dishSize[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
+                        </section>
+                    </div>
+                </div>
+                <div id="imgDiv">
+                    <img src="{{dish.dishPicture}}">
+                </div>
+                <button (click)="addToCart(dish)">Add To Order</button>
+            </div>
+        </div>
+        </div>
+
+        <div id="menuDivTea">
+            <div id="h3Div"><h3>Tea</h3></div>
+                <div id="displayMenuDivTea">
+                    <div id="menuTea" *ngFor="let dish of myTeaArry">
+                        <div id="dishDivTea">
+                            <h3>{{dish.dishName}} <fa-icon id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
+                            <p id="dishDescription"><span>{{dish.dishDescription}}</span></p>
+                            <div id="sizeSelect">
+                                <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
+                                    <label for="sizeSmall">{{dish.dishSize[0]}}</label>
+                                    <button (click)="selectedSize(dish.dishPrice[0], dish.dishSize[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
+                                </section>
+            
+                                <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
+                                    <label for="sizeMedium">{{dish.dishSize[1]}}</label>
+                                    <button (click)="selectedSize(dish.dishPrice[1], dish.dishSize[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
+                                </section>
+            
+                                <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
+                                    <label for="sizeLarge">{{dish.dishSize[2]}}</label>
+                                    <button (click)="selectedSize(dish.dishPrice[2], dish.dishSize[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
+                                </section>
+                            </div>
+                        </div>
+                        <div id="imgDiv">
+                            <img src="{{dish.dishPicture}}">
+                        </div>
+                        <button (click)="addToCart(dish)">Add To Order</button>
+                    </div>
+                </div>
+            </div>
+</div>
+<div id="showOrderDiv">
+    <div id="orderDiv">
+    <h3>Current Order</h3>
+    <div id="orderDivItems" *ngFor="let order of currentOrder">
+        <h5>({{order.dishSize}}) {{order.dishName}} - {{order.dishPrice | currency:'ILS':'symbol'}}</h5>
+    </div>
+    <hr>
+    <div id="sumDiv">
+        <span>Order Sum</span> {{totalSum | currency:'ILS':'symbol'}}
+    </div>
+    <div id="proceedToPay">
+        <button (click)="proceedToCheckout()">Proceed To CheckOut</button>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<div id="mainBody">
+
+    <div id="sideMiniForumDiv">
+        <div *ngFor="let post of myLimitedForumPostsArray">
+            <div id="postDiv" (click)="moveToForum(post.postId)">
+                <h5>{{post.postTitle}}</h5>
+                <p>{{post.postBody}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="followUsDiv">
+        <h4>Follow Us</h4>
+        <fa-icon id="facebookIcon" [icon]="fbIcon" size="4x" (click)="openPage('http://www.facebook.com')"></fa-icon>
+        <fa-icon id="twitterIcon" [icon]="twIcon" size="4x" (click)="openPage('http://www.twitter.com')"></fa-icon>
+        <fa-icon id="instegramIcon" [icon]="inIcon" size="4x" (click)="openPage('http://www.instegram.com')"></fa-icon>
+        <fa-icon id="googleIcon" [icon]="googleIcon" size="4x" (click)="openPage('http://www.googleplus.com')"></fa-icon>
+    </div>
+
+    <div id="resHelpHoursDiv">
+
+    <div id="eventReservationsDiv" >
+        <fa-icon id="eventIcon" [icon]="calendarIcon" size="3x" (click)="moveMeTo('reservations')"></fa-icon>
+        <h3>Events Reservations</h3>
+        <p>You can easily reserve a table for you or a party of guests by <span>Clicking Here</span></p>
+    </div>
+
+    <div id="helpWantedDiv">
+        <fa-icon id="briefcaseIcon" [icon]="briefcaseIcon" size="3x" #wanted (click)="moveMeTo('wanted')"></fa-icon>
+        <h3>Help Wanted</h3>
+        <p>We are looking to expand our family, come take a look at our job openings, young and good atmosphere, excellent conditions for suitable people</p>
+    </div>
+
+    <div id="ourHoursDiv">
+        <fa-icon id="clockIcon" [icon]="clockIcon" size="3x"></fa-icon>
+        <h3>Our working hours</h3>
+        <p>Sunday-thursday 08:00-20:00</p>
+        <p>Friday 08:00-15:00</p>
+        <p>Saturday Closed</p>
+    </div>
+    
+    </div>
+
+</div>

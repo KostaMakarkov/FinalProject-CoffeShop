@@ -1,0 +1,44 @@
+
+
+#wantedDiv{
+    background-image: url('../../assets/vintage-texture.jpeg');
+}
+
+#wanted{
+    background-image: url('../../assets/helpwanted.jpg');
+    height: 246px;
+    width: 390px;
+    background-size: cover;
+    border-radius: 15px;
+    margin: 15px;
+    border: 5px solid burlywood;
+}
+#wanted h4{
+    display: inline-block;
+    margin: 10px 0px 5px 190px;
+    font-family: cursive;
+    color: #4b3424;
+}
+#wanted p{
+    width: 149px;
+    height: 187px;
+    margin-left: 237px;
+    font-weight: 600;
+    font-family: cursive;
+    color: #4b3424;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#wanted:hover{
+    cursor: pointer;
+    transition: 700ms;
+    border: 5px solid brown;
+    height: 260px;
+    width: 390px;
+}
+#displayWantedPosts{
+    width: 83%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}

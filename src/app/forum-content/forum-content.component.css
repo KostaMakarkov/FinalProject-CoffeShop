@@ -1,0 +1,142 @@
+
+#showPostsDiv{
+    background-color:wheat;
+}
+
+#postHeader{
+    background-color: wheat;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #7b563c;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: cursive;
+}
+#postHeaderDiv{
+    display: block;
+    margin: auto;
+    width: 65%;
+}
+#commentsH3{
+    text-align: center;
+    font-weight: 600;
+    font-family: cursive;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #7b563c;
+}
+#titleP{
+
+    padding: 10px 15px 0px 10px;
+}
+#creatorP{
+
+    padding: 10px 15px 0px 10px;
+}
+#dateP{
+
+    padding: 10px 15px 0px 10px;
+}
+#postContent{
+    background-color: burlywood;
+    border-radius: 15px;
+    width: 60%;
+    margin: auto;
+}
+#bodyContainer{
+    background-color: wheat;
+}
+#pBody{
+    padding: 15px 15px 15px 15px;
+    font-weight: 600;
+    margin: 0px 0px 0px 0px;
+    color: #7b563c;
+}
+#newPostDiv{
+    height: 315px;
+}
+#newPostDiv h3{
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    font-weight: 600;
+    font-family: cursive;
+    color: #7b563c;
+}
+#emailInput{
+    width: 300px;
+    margin: auto;
+    display: block;
+    border-radius: 15px;
+    border: 0px;
+    padding: 5px;
+    color: #7b563c;
+    font-weight: 600;
+    font-family: cursive;
+
+    
+}
+#textContentInput{
+    margin: 10px auto;
+    display: block;
+    border-radius: 15px;
+    color: #7b563c;
+    font-weight: 600;
+    font-family: cursive;
+}
+#addComment{
+    margin:auto;
+    display: block;
+    padding: 10px;
+    color: #7b563c;
+    font-weight: 600;
+    font-family: cursive;
+    background-color: burlywood;
+    border-radius: 15px;
+    border: 0px;
+    margin-top: 15px;
+}
+#addComment:hover{
+    transition: 800ms;
+    color: burlywood;
+    background-color:#7b563c;
+    border: 1px solid burlywood;
+}
+
+#commentDiv{
+    background-color: burlywood;
+    border-radius: 15px;
+    width: 60%;
+    margin: auto;
+}
+#showCommentsDiv{
+    margin:10px 0px 10px 0px;;
+}
+#commentPbody{
+    margin: 0px 0px 5px 10px;
+    font-weight: 500;
+    font-family: cursive;
+    color: #7b563c;
+}
+#dateAndTimeDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 600;
+    font-family: cursive;
+    color: #7b563c;
+}
+#msgDiv{
+    text-align: center;
+    margin: auto;
+    font-family: cursive;
+    font-weight: 700;
+    color:#7b563c;
+    border: 1px solid burlywood;
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 170px;
+}

@@ -1,0 +1,105 @@
+
+#mainBody{
+    border: 5px solid burlywood;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: beige;
+}
+
+
+
+#sideMiniForumDiv{
+    display: inline-block;
+    margin: 15px 20px 15px 20px;
+    padding: 10px;
+    border: 5px solid burlywood;
+    background: beige;
+    height: 620px;
+}
+#postDiv{
+    border: 1px solid burlywood;
+    padding: 5px;
+    border-radius: 15px;
+    font-weight: 400;
+    font-family: cursive;
+    color: #7b563c;
+    text-align: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+#followUsDiv{
+    margin: 15px 20px 15px 20px;
+    text-align: center;
+    border: 5px solid burlywood;
+    padding: 5px;
+    background-color: beige;
+    height: 620px
+}
+#followUsDiv h4{
+    color: #7b563c ;
+}
+#facebookIcon{
+    display: block;
+    margin: 40px 0px 40px 0px;
+    cursor: pointer;
+    color: cornflowerblue;
+}
+#twitterIcon{
+    display: block;
+    margin: 40px 0px 40px 0px;
+    cursor: pointer;
+    color: cyan;
+}
+#instegramIcon{
+    display: block;
+    margin: 40px 0px 40px 0px;
+    cursor: pointer;
+    color: crimson;
+}
+#googleIcon{
+    display: block;
+    margin: 40px 0px 40px 0px;
+    cursor: pointer;
+    color: brown;
+}
+#resHelpHoursDiv{
+    border: 5px solid burlywood;
+    margin: 15px 20px 15px 20px;
+    width: 69%;
+    background-color: beige;
+    height: 620px;
+    color:  #7b563c;
+}
+#eventReservationsDiv{
+    display: block;
+    margin: auto;
+    width: 555px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 5px solid burlywood;
+    font-family: cursive;
+}
+#helpWantedDiv{
+    display: block;
+    margin: auto;
+    width: 555px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 5px solid burlywood;
+    font-family: cursive;
+}
+#ourHoursDiv{
+    display: block;
+    margin: auto;
+    width: 555px;
+    padding: 10px;
+    text-align: center;
+    font-family: cursive;
+}
+#eventIcon{
+    cursor: pointer;
+}
+#briefcaseIcon{
+    cursor: pointer;
+}

@@ -1,0 +1,46 @@
+
+
+
+
+
+<div id="showPostsDiv" *ngFor="let post of myForumPost">
+    <section id="container">
+        <div id="postHeaderDiv">
+        <div id="postHeader">
+            <p id="titleP">{{post.postTitle}}</p>
+            <p id="creatorP">Created by {{post.postCreator}}</p>
+            <p id="dateP">{{post.postDate | shortDate}}</p>
+        </div>
+    </div>
+        <section id="container" id="bodyContainer">
+            <div id="postContent">
+                <p id="pBody">{{post.postBody}}</p>
+            </div>
+            <hr>
+            <h3 id="commentsH3">Comments</h3>
+            <div id="showComments">
+                <div id="showCommentsDiv" *ngFor="let comment of myForumComments">
+                    <div id="commentDiv">
+                        <p id="commentPbody">{{comment.commentBody}}</p>
+                        <div id="dateAndTimeDiv">
+                            <p>{{comment.commentDate | shortDate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div id="newPostDiv">
+                <h3>Add Comment</h3>
+                <form [formGroup]="myForm" (submit)="addNewComment()">
+                    <input type="email" #emailInput id="emailInput" placeholder="Enter Email" formControlName="commentEmail">
+                  <hr>
+                    <textarea id="textContentInput" #textContentInput cols="100" rows="5" formControlName="commentBody" placeholder="Enter your message"></textarea>
+                  <button id="addComment">Post Comment</button>
+                  <div id="msgDiv" *ngIf="msg">{{msg}}</div>
+                  <hr>
+                </form>
+              </div>
+        </section>
+    </section>
+</div>
+

@@ -1,0 +1,63 @@
+
+
+#displayWantedPost{
+    width: 80%;
+    margin: auto;
+    background-color: beige;
+    font-family: cursive;
+    font-weight: 500;
+}
+#h3Position, #h3Resume{
+    text-align: center;
+    color: #7b563c;
+    text-decoration: underline;
+    margin-bottom: 25px;
+}
+#pDescription, #pHours{
+    text-align: center;
+    font-weight: 600;
+    color: #7b563c;
+}
+#wanted{
+    width: 60%;
+    margin: auto;
+    border-bottom: 3px solid brown;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+form{
+    border-bottom: 5px solid brown
+}
+#sendResume{
+    height: 400px;
+}
+
+#sendResume form input{
+    display: block;
+    width: 330px;
+    height: 45px;
+    text-align: center;
+    border: 0px;
+    background-color: burlywood;
+    color: brown;
+    border-radius: 15px;
+    margin: 15px auto;
+}
+button{
+    background-color: burlywood;
+    height: 45px;
+    width: 85px;
+    border-radius: 15px;
+    border: 0px;
+    color: #7b563c;
+    display: block;
+    margin: 25px auto;
+}
+button:hover{
+    transition: 700ms;
+    color: burlywood;
+    background-color: #7b563c;
+    height: 50px;
+    width: 90px;
+}
+

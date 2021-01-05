@@ -1,0 +1,114 @@
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color:wheat; 
+}
+
+#newPostDiv{
+    width: 30%;
+    margin: 30px 30px 30px 70px;
+    border: 10px solid burlywood;
+    padding: 15px;
+}
+#newPostDiv h3{
+    text-align: center;
+    color: #7b563c;
+    font-family: cursive;
+    font-weight: 600;
+}
+#emailInput{
+    width: 280px;
+    border-radius: 15px;
+    border: 1px solid brown;
+    text-align: center;
+    padding: 8px;
+    background-color: burlywood;
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #7b563c;
+    font-weight: 500;
+    font-family: cursive;
+}
+#titleInput{
+    width: 280px;
+    border-radius: 15px;
+    border: 1px solid brown;
+    text-align: center;
+    padding: 8px;
+    background-color: burlywood;
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #7b563c;
+    font-weight: 500;
+    font-family: cursive;
+}
+#textContentInput{
+    width: 280px;
+    border-radius: 15px;
+    border: 1px solid brown;
+    text-align: center;
+    padding: 8px;
+    background-color: burlywood;
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #7b563c;
+    font-weight: 500;
+    font-family: cursive;
+}
+#addBtn{
+    width: 280px;
+    border: 1px solid brown;
+    border-radius: 15px;
+    height: 40px;
+    background-color: burlywood;
+    font-weight: bolder;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    color: #7b563c;
+}
+#addBtn:hover{
+    transition: 800ms;
+    background-color: #7b563c;
+    color: burlywood;
+}
+#showPostsDiv{
+    width: 56%;
+    margin: 30px 70px 30px 30px;
+    border: 10px solid burlywood;
+    padding: 15px;
+}
+#singlePostDiv{
+    margin: 5px 0px 10px 0px;
+    border: 1px solid brown;
+    padding: 5px;
+    background-color: burlywood;
+    font-size: 20px;
+    border-radius: 15px;
+}
+#singlePostDiv{
+    color: #7b563c;
+    font-weight: 600;
+    font-family: cursive;
+}
+#singlePostDiv ol{
+    margin: 1px;
+}
+#singlePostDiv ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#singlePostDiv:hover{
+    transition: 800ms;
+    background-color: #7b563c;
+    color: burlywood;
+    cursor: pointer;
+}

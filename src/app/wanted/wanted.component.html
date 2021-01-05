@@ -1,0 +1,10 @@
+
+
+<div id="wantedDiv">
+    <div id="displayWantedPosts">
+        <div id="wanted" *ngFor="let post of myWantedPostsArry" (click)="moveToPost(post.wantedId)">
+            <h4>{{post.wantedPosition}}</h4>
+            <p>{{post.wantedDescription}}</p>
+        </div>
+    </div>
+</div>

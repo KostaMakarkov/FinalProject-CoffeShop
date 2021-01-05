@@ -1,0 +1,28 @@
+
+
+
+<section id="container">
+
+<div id="newPostDiv">
+  <h3>Add Post</h3>
+  <form [formGroup]="myForm" (submit)="addNewPost()">
+      <input type="email" id="emailInput" placeholder="Enter Email" formControlName="postEmail">
+      <input type="text"  id="titleInput" placeholder="Enter Title" formControlName="postTitle">
+      <textarea id="textContentInput" cols="30" rows="10" placeholder="Enter your message" formControlName="postBody"></textarea>
+    <button id="addBtn">Add Post</button>
+  </form>
+</div>
+
+
+
+<div id="showPostsDiv">
+  <div id="singlePostDiv" *ngFor="let post of myForumArray">
+    <ul>
+      <li (click)="sendIdToForumContent(post.postId)">{{post.postTitle}}</li>
+      <li>{{post.postDate | shortDate}}</li>
+    </ul>
+  </div>
+</div>
+
+</section>
+    
