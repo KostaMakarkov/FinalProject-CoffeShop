@@ -1,0 +1,56 @@
+
+<div id="goBack">
+  <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+</div>
+
+<div id="postsNcommentsDiv">
+
+    <div id="showPostsDiv">
+        <div id="postsDisplay">
+          <h3>My Forum Posts</h3>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th class="tID" scope="col">Post ID</th>
+                    <th class="tTitle" scope="col">Post Title</th>
+                    <th class="tContent" scope="col">Post Content</th>
+                    <th class="tDate" scope="col">Post Date</th>
+                    <th class="tDelete" scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let post of myPostsArray">
+                  <tr>
+                    <td class="tID">{{post.postId}}</td>
+                    <td class="tTitle">{{post.postTitle}}</td>
+                    <td class="tContent">{{post.postContent}}</td>
+                    <td class="tDate">{{post.postDate | shortDate}}</td>
+                    <td class="tDelete"><button (click)="deletePost(post.postId)">X</button></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3>My Forum Comments</h3>
+              
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="tID" scope="col">Comment ID</th>
+                    <th class="tContent" scope="col">Comment Content</th>
+                    <th class="tDate" scope="col">Comment Date</th>
+                    <th class="tDelete" scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let comment of myCommentsArray">
+                  <tr>
+                    <td class="tID">{{comment.commentId}}</td>
+                    <td class="tContent">{{comment.commentBody}}</td>
+                    <td class="tDate">{{comment.commentDate | shortDate}}</td>
+                    <td class="tDelete"><button (click)="deleteComment(comment.commentId)">X</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+
+</div>

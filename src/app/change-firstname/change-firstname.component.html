@@ -1,0 +1,15 @@
+
+
+
+
+
+<h2>Change Your Firstname</h2>
+<form [formGroup]="changeForm" (submit)="change()">
+<section>
+    <label for="FirstnameInput">Firstname</label>
+    <input type="text" id="FirstnameInput" class="form-control" formControlName="firstname" placeholder="Enter a new Firstname">
+    <span class="help-block" *ngIf="!changeForm.get('firstname').valid && changeForm.get('firstname').touched">firstname cannot be Empty or less then 2 char</span>
+    <button>Change <fa-icon *ngIf="activateIcon" id="doubleCheck" [icon]="doubleCheck" size="1x"></fa-icon></button>
+</section>
+</form>
+

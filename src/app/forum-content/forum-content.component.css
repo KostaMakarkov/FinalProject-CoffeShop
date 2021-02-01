@@ -1,6 +1,7 @@
 
 #showPostsDiv{
     background-color:wheat;
+    font-family: cursive;
 }
 
 #postHeader{
@@ -12,17 +13,17 @@
     color: #7b563c;
     font-size: 20px;
     font-weight: 600;
-    font-family: cursive;
 }
 #postHeaderDiv{
     display: block;
     margin: auto;
-    width: 65%;
+    width: 85%;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 #commentsH3{
     text-align: center;
     font-weight: 600;
-    font-family: cursive;
     margin-top: 15px;
     margin-bottom: 15px;
     color: #7b563c;
@@ -55,14 +56,17 @@
     color: #7b563c;
 }
 #newPostDiv{
-    height: 315px;
+    height: 385px;
 }
 #newPostDiv h3{
     text-align: center;
     margin: 10px 0px 10px 0px;
     font-weight: 600;
-    font-family: cursive;
     color: #7b563c;
+}
+.titlePspan{
+    color: brown;
+    display: inline;
 }
 #emailInput{
     width: 300px;
@@ -73,7 +77,6 @@
     padding: 5px;
     color: #7b563c;
     font-weight: 600;
-    font-family: cursive;
 
     
 }
@@ -83,7 +86,6 @@
     border-radius: 15px;
     color: #7b563c;
     font-weight: 600;
-    font-family: cursive;
 }
 #addComment{
     margin:auto;
@@ -116,7 +118,6 @@
 #commentPbody{
     margin: 0px 0px 5px 10px;
     font-weight: 500;
-    font-family: cursive;
     color: #7b563c;
 }
 #dateAndTimeDiv{
@@ -124,13 +125,11 @@
     flex-wrap: wrap;
     justify-content: center;
     font-weight: 600;
-    font-family: cursive;
     color: #7b563c;
 }
 #msgDiv{
     text-align: center;
     margin: auto;
-    font-family: cursive;
     font-weight: 700;
     color:#7b563c;
     border: 1px solid burlywood;
@@ -139,4 +138,120 @@
     padding: 10px;
     border-radius: 15px;
     width: 170px;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+    border: 2px solid red !important;
+}
+
+span{
+    display: block;
+    color: red;
+    text-align: center;
+    margin: 5px;
+}
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+@media(max-width:800px){
+
+    #goBack{
+        top: 132px;
+    }
+
+    #showPostsDiv{
+        margin-top: 45px;
+    }
+    #postHeaderDiv{
+        width: 98%;
+        height: 75px;
+    }
+    #postHeader{
+        background-color: #4b3424;
+        color: moccasin;
+        border-radius: 5px;
+        height: 65px
+        
+    }
+    #postHeader p{
+        font-size: 10px;
+        width: 30%;
+    }
+
+    #postContent{
+        width: 98%;
+    }
+    #pBody{
+        width: 90%;
+        font-size: 10px;
+    }
+    #commentsH3{
+        font-size: 15px;
+    }
+    #commentDiv{
+        width: 80%;
+    }
+    #commentPbody{
+        font-size: 10px;
+        font-weight: 600;
+    }
+    #dateAndTimeDiv{
+        font-size: 10px;
+    }
+    #newPostDiv{
+        width: 98%;
+        display: block;
+        margin: auto;
+        height: 100%;
+    }
+    #newPostDiv h3{
+        font-size: 15px;
+    }
+    #commentEmail{
+        font-size: 10px;
+        width: 85%
+    }
+    #textContentInput{
+        width: 85%;
+        height: 60px;
+        font-size: 10px;
+    }
+    #help-block{
+        font-size: 10px;
+    }
+    #addComment{
+        font-size: 10px;
+        height: 30px;
+    }
+
+    #emailInput{
+        font-size: 10px;
+        width: 44%;
+        text-align: center; 
+    }
+    #textContentInput{
+        font-size: 10px;
+        width: 54%;
+    }
+
+
+
+
+
+
 }

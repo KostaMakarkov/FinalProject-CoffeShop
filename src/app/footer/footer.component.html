@@ -2,6 +2,24 @@
 
 
 <div id="footerDiv">
-<h2>dsadas</h2>
-    <div id="bgPhoto"></div>
+    
+    <div class="footerTab">
+        <h4 (click)="moveTo('about-us')">About Us</h4>
+        <h4 (click)="moveTo('about-us')">Contact Us</h4>
+        <h4 (click)="moveTo('forum')">Forum</h4>
+        <h4 (click)="moveTo('login')">Login</h4>
+    </div>
+
+    <div class="footerTab">
+        <h4 (click)="moveTo('menu')">Menu</h4>
+        <h4 (click)="moveTo('user-settings/order-history')">Order History</h4>
+        <h4 (click)="moveTo('register')">Register</h4>
+        <h4 (click)="moveTo('reservations')">Reservations</h4>
+    </div>
+
+    <div class="footerTab">
+        <h4 (click)="moveTo('about-us')">Temrs And Conditions</h4>
+        <h4 (click)="moveTo('wanted')">Wanted</h4>
+    </div>
+
 </div>

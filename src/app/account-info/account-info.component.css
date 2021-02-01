@@ -1,0 +1,156 @@
+
+#accountInfoDivDisplay{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+
+h3{
+    text-align: center;
+    margin: 25px;
+    font-weight: 600;
+    color: #20150a;
+    text-decoration: underline;
+    font-family: cursive;
+}
+
+#infoDiv{
+    width: 50%;
+    font-family: cursive;
+    margin: 15px;
+    background: moccasin;
+    border-radius: 10px;
+    display: inline-block;
+    height: 700px;
+}
+
+section{
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+#addressDiv{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+span{
+    display: inline-block;
+    background: #c8a271;
+    color: #533210;
+    width: 175px;
+    height: 35px;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 50px 5px 5px 5px;
+    border: 2px solid #533210;
+}
+p{
+    display: inline-block;
+    background: #c8a271;
+    color: #533210;
+    width: 410px;
+    height: 35px;
+    border: 2px solid #533210;
+    padding: 5px;
+    font-weight: 600;
+    margin-left: 20px;
+    border-radius: 5px
+}
+
+button{
+    display: inline-block;
+    height: 35px;
+    width: 100px;
+    border: 2px solid #533210;
+    background-color: #c8a271;
+    color: #533210;
+    border-radius: 5px 5px 50px 5px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+button:hover{
+    background-color: #533210;
+    color: #c8a271;
+}
+
+#changeInfoDiv{
+    background-color: moccasin;
+    width: 46%;
+    margin: 15px;
+    height: 700px;
+    border-radius: 10px;
+}
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+
+@media(max-width:800px){
+
+    #goBack{
+        top: 132px;
+    }
+    #userSettings{
+        margin-top: 60px;
+    }
+    .liClass{
+        font-size: 10px;
+    }
+    #infoDiv{
+        height: 665px;
+        width: 40%;
+        margin:5px;
+    }
+    #accountInfoDiv h3{
+        font-size: 15px;
+    }
+    #accountInfoDivDisplay{
+        flex-wrap: wrap;
+    }
+
+    #infoDiv section span{
+        font-size: 10px;
+        height: 25px;
+        width: auto;
+        display: block;
+        margin: 5px auto;
+        border-radius: 5px;
+        border: 0px;
+    }
+    #infoDiv section p{
+        font-size: 10px;
+        width: auto;
+        height: 25px;
+        display: block;
+        margin: 5px auto;
+    }
+    #infoDiv section button{
+        font-size: 10px;
+        height: 25px;
+        width: 60px;
+        border-radius: 5px;
+        display: block;
+        margin: auto;
+    }
+    #changeInfoDiv{
+        width: 54%;
+        margin: 5px;
+        height: 665px;
+    }
+
+
+}

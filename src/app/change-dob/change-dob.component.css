@@ -1,0 +1,86 @@
+h2{
+    text-align: center;
+    font-family: cursive;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+section{
+    font-family: cursive;
+    width: 90%;
+    margin: auto;
+    background-color: #c8a271;
+    height: 210px;
+    border-radius: 5px;
+}
+form{
+    text-align: center;
+}
+
+label{
+    margin: 20px;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+input{
+    width: 70%;
+    margin: auto;
+    color: #533210;
+    font-size: 15px;
+    background-color: moccasin;
+}
+
+button{
+    height: 35px;
+    width: 100px;
+    border: 2px solid #533210;
+    background-color: #ffe4b5;
+    color: #533210;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+button:hover{
+    background-color: #533210;
+    color: #c8a271;
+}
+span{
+    display: block;
+    margin: 5px;
+    text-align: center;
+    color: red;
+}
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+@media(max-width:800px){
+    h2{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    form section{
+        height: 150px;
+    }
+    form section label{
+        font-size: 10px;
+        margin: 10px auto;
+    }
+    span{
+        font-size: 10px;
+    }
+    #dateInput{
+        font-size: 10px;
+        width: 95%
+    }
+    form{
+        position: sticky;
+        top: 25px;
+    }
+
+    form section button{
+        font-size: 10px;
+        height: 25px;
+        width: 50px;
+    }
+}

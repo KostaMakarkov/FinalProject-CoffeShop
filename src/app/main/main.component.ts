@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { AuthService } from '../auth.service';
+import { UserDemo } from '../user-demo';
 
 
 @Component({
@@ -10,12 +12,11 @@ import { ApiService } from '../api.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private api:ApiService) { }
-
-  
+  constructor(private api:ApiService, private auth:AuthService) { }
 
 
-  ngOnInit(): void {
-  }
+
+  ngOnInit(): void { 
+}
 
 }

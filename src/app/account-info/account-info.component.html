@@ -1,0 +1,56 @@
+
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+  </div>
+<div id="accountInfoDiv">
+            <h3>My Info / Change My Info</h3>
+    <div id="accountInfoDivDisplay">
+
+        <div id="infoDiv">
+                <section>
+                    <span>Firstname:</span>
+                    <p *ngIf=loggedUser>{{loggedUser.firstname}}</p>
+                    <button (click)="showChangeDiv('change-firstname')">Change</button>
+                </section>
+                
+                <section>
+                    <span>Lastname:</span>
+                    <p *ngIf=loggedUser>{{loggedUser.lastname}}</p>
+                    <button (click)="showChangeDiv('change-lastname')">Change</button>                
+                </section>
+    
+    
+                <section>
+                    <span>Phone Number</span>
+                    <p *ngIf=loggedUser>0{{loggedUser.phone}}</p>
+                    <button (click)="showChangeDiv('change-phone')">Change</button>                
+                </section>
+
+
+                <section id="addressDiv">
+                    <span>City</span>
+                    <p *ngIf=loggedUser>{{loggedUser.address.addressCity}}</p>
+                    <span>Street Address</span>
+                    <p *ngIf=loggedUser>{{loggedUser.address.addressStreet}}</p>
+                    <span>Apartment Number</span>
+                    <p *ngIf=loggedUser>{{loggedUser.address.addressApartment}}</p>
+                    <span>ZipCode</span>
+                    <p *ngIf=loggedUser>{{loggedUser.address.addressZip}}</p>
+                    <button (click)="showChangeDiv('change-address')">Change</button>                
+                </section>
+
+    
+                <section>
+                    <span>Password</span>
+                    <p *ngIf=loggedUser>*********</p>
+                    <button (click)="showChangeDiv('change-password')">Change</button>                
+                </section>
+            </div>
+
+            <div id="changeInfoDiv">
+                <div id="stickyDiv">
+                <router-outlet ></router-outlet>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,97 @@
+#postsNcommentsDiv{
+    width: 80%;
+    margin: auto;
+    font-family: cursive;
+}
+
+h3{
+    text-align: center;
+    margin: 25px;
+    font-weight: 600;
+    color: #20150a;
+    text-decoration: underline;
+}
+
+thead{
+    background-color: #20150a;
+    color: bisque;
+}
+
+tbody{
+    background-color: #7e5428c4;
+    color: bisque;
+    border: 2px solid #533210;
+    border-radius: 5px;
+}
+.tID{
+    width: 10%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tTitle{
+        width: 10%;
+        vertical-align: middle;
+        border-bottom: 2px solid #533210;
+        border-right: 2px solid #533210;
+}
+.tContent{
+    width: 55%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDate{
+    width: 20%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDelete{
+    width: 7%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+button{
+    background-color: #533210;
+    color: bisque;
+    border: 2px solid bisque;
+    margin: auto;
+    display: block;
+    width: 50px;
+}
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+@media(max-width:800px){
+
+    #backIcon{
+        top: 123px;
+    }
+    #postsNcommentsDiv{
+        margin: 55px 5px 5px 5px;
+        width: 97%;
+    }
+    #postsDisplay h3{
+        font-size: 15px;
+    }
+    #postsDisplay table{
+        font-size: 8px;
+    }
+}

@@ -1,15 +1,39 @@
 
 
-
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+  </div>
 
 <div id="reservationDiv">
     <div id="createAreservation">
         <h2>Reserve a table or a date</h2>
-        <form>
-            <input type="text" id="reservationName" placeholder="Enter full name">
-            <input type="number" id="reservationContact" placeholder="Enter contact number">
-            <input type="datetime-local" id="reservationDate" placeholder="Enter date and time">
-            <button>Reserve a Table</button>
+        <form [formGroup]="reservationForm" (ngSubmit)="sendReservation()">
+
+            <section>
+                <label for="reservationName">Full Name</label>
+                <input type="text" id="reservationName" class="form-control" formControlName="reservationName" placeholder="Enter full name">
+                <span class="help-block" *ngIf="!reservationForm.get('reservationName').valid && reservationForm.get('reservationName').touched">Enter Full name</span>
+            </section>
+
+            <section>
+                <label for="emailInput">Phone Number</label>
+                <input type="number" id="reservationContact" class="form-control" formControlName="reservationContactNumber" placeholder="Enter contact number">
+                <span class="help-block" *ngIf="!reservationForm.get('reservationContactNumber').valid && reservationForm.get('reservationContactNumber').touched">Enter Phone number</span>
+            </section>
+
+            <section>
+                <label for="emailInput">Capacity</label>
+                <input type="number" id="reservationCapacity" class="form-control" formControlName="reservationCapacity" placeholder="For how many people?">
+                <span class="help-block" *ngIf="!reservationForm.get('reservationCapacity').valid && reservationForm.get('reservationCapacity').touched">Enter for how many people</span>
+            </section>
+
+            <section>
+                <label for="emailInput">Date</label>
+                <input type="datetime-local" id="reservationDate" class="form-control" formControlName="reservationDate" placeholder="Enter date and time">
+                <span class="help-block" *ngIf="!reservationForm.get('reservationDate').valid && reservationForm.get('reservationDate').touched">Select the Time and Date for the Reservation</span>
+            </section>
+
+            <button [disabled]="!reservationForm.valid">Reserve a Table</button>
         </form>
     </div>
 </div>

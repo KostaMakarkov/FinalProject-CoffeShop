@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -24,7 +24,28 @@ import { ForumContentComponent } from './forum-content/forum-content.component';
 import { ShortDatePipe } from './short-date.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WantedPostComponent } from './wanted-post/wanted-post.component';
-import { CheckoutComponent } from './checkout/checkout.component'
+import { CheckoutComponent } from './checkout/checkout.component';
+import { RegisterComponent } from './register/register.component'
+import { AuthService } from './auth.service';
+import { ApiService } from './api.service';
+import { AuthInterceptor } from './auth.interceptor';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { UserSettingsDisplayComponent } from './user-settings-display/user-settings-display.component';
+import { AccountInfoComponent } from './account-info/account-info.component';
+import { PostsAndCommentsComponent } from './posts-and-comments/posts-and-comments.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { ChangeFirstnameComponent } from './change-firstname/change-firstname.component';
+import { ChangeLastnameComponent } from './change-lastname/change-lastname.component';
+import { ChangePhoneComponent } from './change-phone/change-phone.component';
+import { ChangeDobComponent } from './change-dob/change-dob.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+import { ChangeAddressComponent } from './change-address/change-address.component';
+
 
 
 @NgModule({
@@ -45,17 +66,35 @@ import { CheckoutComponent } from './checkout/checkout.component'
     ForumContentComponent,
     ShortDatePipe,
     WantedPostComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    RegisterComponent,
+    UserSettingsComponent,
+    UserSettingsDisplayComponent,
+    AccountInfoComponent,
+    PostsAndCommentsComponent,
+    OrderHistoryComponent,
+    ChangeFirstnameComponent,
+    ChangeLastnameComponent,
+    ChangePhoneComponent,
+    ChangeDobComponent,
+    ChangePasswordComponent,
+    ChangeAddressComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService, ApiService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

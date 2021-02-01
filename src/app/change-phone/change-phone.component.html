@@ -1,0 +1,11 @@
+
+
+<h2>Change Your Phone</h2>
+<form [formGroup]="changeForm" (submit)="change()">
+    <section>
+        <label for="phoneInput">Phone Number</label>
+        <input type="number"id="phoneInput" class="form-control" formControlName="phone" placeholder="Enter Your Phone Number">
+        <span class="help-block" *ngIf="!changeForm.get('phone').valid && changeForm.get('phone').touched">Please enter a phone number</span>
+        <button>Change <fa-icon *ngIf="activateIcon" id="doubleCheck" [icon]="doubleCheck" size="1x"></fa-icon> </button>
+    </section>
+</form>

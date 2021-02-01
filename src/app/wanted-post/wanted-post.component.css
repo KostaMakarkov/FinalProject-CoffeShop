@@ -29,26 +29,31 @@ form{
     border-bottom: 5px solid brown
 }
 #sendResume{
-    height: 400px;
+    height: 600px;
+    text-align: center;
 }
 
 #sendResume form input{
-    display: block;
+    display: inline-block;
     width: 330px;
     height: 45px;
     text-align: center;
-    border: 0px;
+    border-top: 2px solid #7b563c;
+    border-right: 2px solid #7b563c;
+    border-bottom: 2px solid #7b563c;
+    border-left: 0px;
     background-color: burlywood;
     color: brown;
-    border-radius: 15px;
-    margin: 15px auto;
+    border-radius: 0px 0px 50px 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 button{
     background-color: burlywood;
     height: 45px;
     width: 85px;
     border-radius: 15px;
-    border: 0px;
+    border: 2px solid #7b563c;
     color: #7b563c;
     display: block;
     margin: 25px auto;
@@ -61,3 +66,44 @@ button:hover{
     width: 90px;
 }
 
+label{
+    margin: 5px;
+    border: 2px solid #7b563c;
+    width: 265px;
+    height: 45px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: #7b563c;
+    color: beige;
+    text-align: center;
+    border-radius: 50px 0px 0px 0px;
+
+}
+
+span{
+    color: red;
+    display: block;
+    text-align: center;
+    margin: 5px;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}

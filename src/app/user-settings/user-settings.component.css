@@ -1,0 +1,54 @@
+
+#userSettings{
+    font-family: cursive;
+    margin: 15px auto;
+    background-color: moccasin;
+    border-radius: 5px
+}
+
+#navbarSupportedContent ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#accountInfoLi, #postsCommentsLi, #orderHistoryLi, #signOutLi{
+    margin: 5px;
+    cursor: pointer;
+}
+#accountInfoLi a, #postsCommentsLi a, #orderHistoryLi a, #signOutLi a{
+    color: #533210;
+    border-radius: 5px;
+    background-color: #84521e73;
+}
+
+.liClass{
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+}
+#accountInfoLi a:hover, #postsCommentsLi a:hover, #orderHistoryLi a:hover, #signOutLi a:hover{
+    background-color: #533210;
+    color: moccasin;
+}
+
+.navbar-nav.mr-auto{
+    display: block;
+    margin: auto;
+}
+
+
+
+@media(max-width:800px){
+
+    #goBack{
+        top: 132px;
+    }
+
+    #userSettings{
+        margin-top: 45px;
+    }
+    .liClass{
+        font-size: 10px;
+        font-weight: 600;
+    }
+}

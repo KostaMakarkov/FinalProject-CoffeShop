@@ -4,4 +4,21 @@
     background-image: url("../../assets/coffeewide4.jpg");
     background-size: 100%;
     height: 309px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footerTab{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+.footerTab h4{
+    width: 60%;
+    margin: auto;
+    height: 35px;
+    background-color: #f5f5dc7a;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    color: #472d1b;
+    cursor: pointer;
 }

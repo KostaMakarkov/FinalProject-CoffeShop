@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+
+
+<h2>Change Your Address</h2>
+<form [formGroup]="changeForm" (submit)="change()">
+
+<section>
+    <label for="AddressInput">City</label>
+    <input type="text" id="AddressInput" class="form-control" formControlName="addressCity" placeholder="Enter City">
+    <span class="help-block" *ngIf="!changeForm.get('addressCity').valid && changeForm.get('addressCity').touched">firstname cannot be Empty or less then 2 char</span>
+</section>
+
+<section>
+    <label for="AddressInput">Street</label>
+    <input type="text" id="AddressInput" class="form-control" formControlName="addressStreet" placeholder="Enter Street Address">
+    <span class="help-block" *ngIf="!changeForm.get('addressStreet').valid && changeForm.get('addressStreet').touched">firstname cannot be Empty or less then 2 char</span>
+</section>
+
+<section>
+    <label for="AddressInput">Apartment</label>
+    <input type="text" id="AddressInput" class="form-control" formControlName="addressApartment" placeholder="Enter Apartment Number">
+    <span class="help-block" *ngIf="!changeForm.get('addressApartment').valid && changeForm.get('addressApartment').touched">firstname cannot be Empty or less then 2 char</span>
+</section>
+
+<section>
+    <label for="AddressInput">ZipCode</label>
+    <input type="text" id="AddressInput" class="form-control" formControlName="addressZip" placeholder="Enter ZipCode">
+    <span class="help-block" *ngIf="!changeForm.get('addressZip').valid && changeForm.get('addressZip').touched">firstname cannot be Empty or less then 2 char</span>
+</section>
+<button [disabled]="!changeForm.valid">Change<fa-icon *ngIf="activateIcon" id="doubleCheck" [icon]="doubleCheck" size="1x"></fa-icon></button>
+
+</form>
+

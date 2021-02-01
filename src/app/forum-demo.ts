@@ -2,14 +2,14 @@ export class ForumDemo {
     postId: String;
     postEmail: string;
     postTitle: String;
-    postBody: String;
+    postContent: String;
     postCreator: String;
     postDate: String;
-    constructor(postId, postEmail, postTitle, postBody, postCreator, postDate){
+    constructor(postId, postEmail, postTitle, postContent, postCreator, postDate){
         this.postId = postId;  
         this.postEmail = postEmail;      
         this.postTitle = postTitle;
-        this.postBody = postBody;
+        this.postContent = postContent;
         this.postCreator = postCreator;
         this.postDate = postDate;       
     }

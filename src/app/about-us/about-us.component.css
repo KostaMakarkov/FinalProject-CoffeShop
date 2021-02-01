@@ -6,62 +6,18 @@
     display: inline-block;
 }
 
-/* about us hover effect start*/
 #aboutUsDiv{
-    z-index: 1;
+    background-image: url('../../assets/aboutus1.jpg');
+    background-size: cover;
 }
-#overlapDiv{
-    z-index: 2;
-    position: absolute;
-    top: 494px;
-    left: 25px;
-}
-#overlapDiv:hover{
-    display: none;
-}
-#aboutUsDiv:hover{
-    z-index: 3;
-}
-#overlapDiv img{
-    width: 694.4px;
-    height: 418px;
-    border-radius: 15px;
-    border: 5px solid  #4b3424;
-}
-/* about us hover effect end*/
-
-/* about coffee hover effect start*/
 #aboutCoffeeDiv{
-    z-index: 1;
+    background-image: url('../../assets/aboutus.jpg');
+    background-size: cover;
 }
-#overlapDiv2{
-    z-index: 2;
-    position: absolute;
-    top: 494px;
-    right: 55px;
-    border-radius: 15px;
-}
-#overlapDiv2:hover{
-    display: none;
-}
-#aboutCoffeeDiv:hover{
-    z-index: 3;
-}
-#overlapDiv2 img{
-    width: 694.4px;
-    height: 418px;
-    border-radius: 15px;
-    border: 5px solid  #4b3424;
-}
-/* about coffee hover effect end*/
 
-.h3Overlay{
-    position: absolute;
-    top: 100px;
-    left: 15%;
-    background-color: #f5f5dc5e;
-    font-weight: 700;
-}
+
+
+
 
 #aboutUsMain{
     display: flex;
@@ -78,6 +34,17 @@ h3{
     margin-top: 35px;
     margin-bottom: 35px;
 }
+h5{
+    text-align: center;
+    color:  #1a1009;
+    border-bottom: solid 5px #4b3424;
+    border-radius: 15px;
+    width: 200px;
+    margin: auto;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
 #h3Div{
     margin-top: 25px;
     margin-bottom: 45px;
@@ -86,7 +53,7 @@ h3{
     display: flex;
     flex-wrap: wrap;
     padding: 15px;
-    background-color: moccasin;
+    background-color: #ffe4b58f;
     border-radius: 15px;
 }
 #pDiv p{
@@ -103,6 +70,89 @@ h3{
     margin: auto 85px;
     width: 80%;
     margin-bottom: 10px;
-    color:  #4b3424;
+    color:  #1a1009;
     font-weight: 600;
+}
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+
+@media(max-width:800px){
+
+    #overlapDiv, #overlapDiv2{
+        display: none;
+    }
+
+    #goBack{
+        top: 132px;
+    }
+    h3{
+        margin-top: 65px;
+        font-size: 15px;
+        width: 62%;
+        border-bottom: 2px solid #4b3424;
+        font-weight: 600;
+    }
+    #aboutUsMain{
+        width: 98%;
+        display: block;
+        margin: 0px;
+    }
+    #aboutUsDiv{
+        display: block;
+        width: 98%;
+        margin: 0px;
+        padding: 5px;
+    }
+    #aboutUsDiv h5{
+        font-size: 15px;
+        width: 36%;
+        border-bottom: 2px solid #4b3424;
+        margin-bottom: 10px;
+    }
+    #pDiv{
+        width: 60%;
+        margin: auto;
+    }
+    #pDiv p{
+        margin: 5px;
+    }
+    .pSpan{
+        margin: 5px;
+        font-size: 10px;
+        width: 98%;
+        text-align: center;
+    }
+
+
+    /* Our Coffee DIV **/
+    #aboutCoffeeDiv h5{
+        font-size: 15px;
+        width: 36%;
+        border-bottom: 2px solid #4b3424;
+        margin-bottom: 10px;
+    }
+
+    #aboutCoffeeDiv{
+        display: block;
+        width: 98%;
+        margin: 0px;
+        padding: 5px;
+    }
+
 }

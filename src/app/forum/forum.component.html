@@ -1,15 +1,31 @@
 
-
+<div id="goBack">
+  <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+</div>
 
 <section id="container">
 
 <div id="newPostDiv">
   <h3>Add Post</h3>
-  <form [formGroup]="myForm" (submit)="addNewPost()">
-      <input type="email" id="emailInput" placeholder="Enter Email" formControlName="postEmail">
-      <input type="text"  id="titleInput" placeholder="Enter Title" formControlName="postTitle">
-      <textarea id="textContentInput" cols="30" rows="10" placeholder="Enter your message" formControlName="postBody"></textarea>
-    <button id="addBtn">Add Post</button>
+  <form [formGroup]="forumForm" (submit)="addNewPost()">
+
+    <div>
+      <input type="email" id="emailInput" placeholder="Enter Email" class="form-control" formControlName = "postEmail">
+      <span class="help-block" *ngIf="!forumForm.get('postEmail').valid && forumForm.get('postEmail').touched">Enter Correct Email</span>
+    </div>
+
+    <div>
+      <input type="text" id="titleInput" placeholder="Enter Title" class="form-control" formControlName = "postTitle">
+      <span class="help-block" *ngIf="!forumForm.get('postTitle').valid && forumForm.get('postTitle').touched">Enter A Title</span>
+    </div>
+
+    <div>
+      <textarea id="textContentInput" cols="30" rows="10" placeholder="Enter your message" class="form-control" formControlName = "postContent"></textarea>
+      <span class="help-block" *ngIf="!forumForm.get('postContent').valid && forumForm.get('postContent').touched">Enter The Content Of Your Post</span>
+    </div>
+      <button id="addBtn" [disabled]="!forumForm.valid">Add Post</button>
+      <span *ngIf="!forumForm.get('postContent').valid && forumForm.get('postContent').touched && !forumForm.get('postTitle').valid && forumForm.get('postTitle').touched && !forumForm.get('postEmail').valid && forumForm.get('postEmail').touched">Fill out all boxes above to post</span>
+
   </form>
 </div>
 

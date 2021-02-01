@@ -1,0 +1,13 @@
+
+
+<h2>Change Your Date Of Birth</h2>
+<form [formGroup]="changeForm" (submit)="change()">
+    <section >
+        <label for="dateInput">Date of Birth</label>
+        <input type="date" id="dateInput" class="form-control"  formControlName="dateOfBirth" placeholder="Enter Your Date Of Birth">
+        <span class="help-block" *ngIf="!changeForm.get('dateOfBirth').valid && changeForm.get('dateOfBirth').touched">Please enter a date of birth</span>
+        <button>Change</button>
+    </section>
+</form>
+
+

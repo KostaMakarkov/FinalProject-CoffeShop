@@ -1,0 +1,82 @@
+
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+  </div>
+  
+
+<div id="registerDiv">
+    <h3>Registration</h3>
+    <div id="formDiv">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <section>
+            <label for="emailInput">Email</label>
+            <input type="email" id="emailInput" class="form-control" formControlName="email" placeholder="Enter Your Email">
+            <span class="help-block" *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">Either Email is already taken or Email is incorrect</span>
+            </section>
+            
+            <section>
+                <label for="passwordInput">Password</label>
+                <input type="password" id="passwordInput" class="form-control" formControlName="password" placeholder="Enter Your Password">
+                <span class="help-block" *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">Please enter a password that contain letters and numbers</span>
+            </section>
+
+            <section>
+                <label for="FirstnameInput">Firstname</label>
+                <input type="text" id="FirstnameInput" class="form-control" formControlName="firstname" placeholder="Enter Your Firstname">
+                <span class="help-block" *ngIf="!registerForm.get('firstname').valid && registerForm.get('firstname').touched">Please enter a firstname</span>
+            </section>
+
+            <section>
+                <label for="LastnameInput">Lastname</label>
+                <input type="text" id="LastnameInput" class="form-control" formControlName="lastname" placeholder="Enter Your Lastname">
+                <span class="help-block" *ngIf="!registerForm.get('lastname').valid && registerForm.get('lastname').touched">Please enter a lastname</span>
+            </section>
+
+            <section>
+                <label for="dateInput">Date of Birth</label>
+                <input type="date" id="dateInput" class="form-control"  formControlName="dateOfBirth" placeholder="Enter Your Date Of Birth">
+                <span class="help-block" *ngIf="!registerForm.get('dateOfBirth').valid && registerForm.get('dateOfBirth').touched">Please enter a date of birth</span>
+            </section>
+
+            <section>
+                <label for="phoneInput">Phone Number</label>
+                <input type="number"id="phoneInput" class="form-control" formControlName="phone" placeholder="Enter Your Phone Number">
+                <span class="help-block" *ngIf="!registerForm.get('phone').valid && registerForm.get('phone').touched">Please enter a phone number</span>
+            </section>
+
+            <section>
+            <label for="emailInput">City</label>
+            <input type="email" id="addressCityInput" class="form-control" formControlName="addressCity" placeholder="Enter Your City">
+            <span class="help-block" *ngIf="!registerForm.get('addressCity').valid && registerForm.get('addressCity').touched">Must Enter City</span>
+            </section>
+
+            <section>
+            <label for="emailInput">Street Address</label>
+            <input type="email" id="addressStreetInput" class="form-control" formControlName="addressStreet" placeholder="Enter Your Street Address">
+            <span class="help-block" *ngIf="!registerForm.get('addressStreet').valid && registerForm.get('addressStreet').touched">Must Enter Street Address</span>
+            </section>
+
+            <section>
+            <label for="emailInput">Apartment</label>
+            <input type="email" id="addressApartmentInput" class="form-control" formControlName="addressApartment" placeholder="Enter Your Aparment Number">
+            <span class="help-block" *ngIf="!registerForm.get('addressApartment').valid && registerForm.get('addressApartment').touched">Enter Apartment Number, If None Enter 0</span>
+            </section>
+
+            <section>
+            <label for="emailInput">Zip</label>
+            <input type="email" id="addressZipInput" class="form-control" formControlName="addressZip" placeholder="Enter Your Zipcode">
+            <span class="help-block" *ngIf="!registerForm.get('addressZip').valid && registerForm.get('addressZip').touched">Enter A Correct Zip</span>
+            </section>
+
+            <section id="agreeSection">
+                <p><input type="checkbox" id="agreeInput" class="form-control" formControlName="agree">I agree to <a href="http://">Terms And Conditions</a> </p>  
+                <span class="help-block" *ngIf="!registerForm.get('agree').valid && registerForm.get('agree').touched">Please agree to Terms and Conditions to register</span>
+            </section>
+
+            <span class="help-block" *ngIf="">Please fill out all the required information</span>
+
+            <button [disabled]="!registerForm.valid" >Register</button>
+        </form>
+    </div>  
+</div>
+

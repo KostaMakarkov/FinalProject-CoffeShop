@@ -83,6 +83,7 @@ button{
 button:hover{
     background-color: burlywood;
     color:  #4b3424;
+    background-color: moccasin;
     border: 2px solid #4b3424;
     transition: 700ms;
 }
@@ -136,4 +137,118 @@ label{
     border: 5px solid #4b3424;
     border-radius: 15px;
     padding: 9px;
+}
+
+P{
+    color: red;
+    display: block;
+    margin: 15px auto;
+    font-weight: 700;
+}
+
+#trashIcon{
+    cursor: pointer;
+}
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+
+@media(max-width:800px){
+
+    #goBack{
+        top: 132px;
+    }
+
+    #h3Div{
+        display: none;
+    }
+    #myProducts{
+        width: 55%;
+    }
+    #displayMenuDivCoffee, #displayMenuDivHotChocolate, #displayMenuDivTea{
+        margin-top: 50px;
+        width: 85%;
+    }
+    #menuCoffee, #menuHotChocolate, #menuTea{
+        width: 90%;
+    }
+    #dishDivCoffee, #dishDivHotChocolate, #dishDivTea{
+        width: 100%;
+    }
+    #dishDivCoffee h3, #dishDivHotChocolate h3, #dishDivTea h3{
+        font-size: 15px;
+    }
+    #dishDescription{
+        font-size: 10px;
+    }
+    #imgDiv{
+        display: block;
+        margin: auto;
+    }
+    #imgDiv img{
+        width: 90px;
+        height: 60px;
+    }
+
+    #smallSizeSection, #mediumSizeSection,#mediumSizeSection, #largeSizeSection{
+        width: 110px;
+        height: 30px;
+    }
+    #smallSizeSection label,#mediumSizeSection label, #largeSizeSection label{
+        width: 20px;
+        font-size: 10px;
+    }
+    #sizeSmall,#sizeMedium, #sizeLarge{
+        width: 50px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    #showOrderDiv{
+        width: 40%;
+        margin-top: 50px;
+    }
+    #orderDiv h3{
+        font-size: 15px;
+        font-weight: 600;
+        color: #4c3424;
+    }
+    #orderDiv{
+        padding: 3px;
+    }
+    #orderDivItems{
+        border-bottom: 2px solid #4b3424;
+    }
+    #orderDivItems h5, #sumDiv{
+        font-size: 10px;
+        font-weight: 600;
+
+    }
+    #proceedToPay button{
+        width: 118px;
+        font-size: 10px;
+        height: 30px;
+        margin-top: 20px;
+    }
+
+
+
+
+
+
 }

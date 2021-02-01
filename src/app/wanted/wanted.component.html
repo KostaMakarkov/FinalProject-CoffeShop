@@ -1,5 +1,8 @@
 
-
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+  </div>
+  
 <div id="wantedDiv">
     <div id="displayWantedPosts">
         <div id="wanted" *ngFor="let post of myWantedPostsArry" (click)="moveToPost(post.wantedId)">

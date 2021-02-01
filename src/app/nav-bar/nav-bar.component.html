@@ -1,60 +1,89 @@
 
 <div id="navBarDiv">
-<div id="cart">
-    <span>{{num}}</span>
-    <fa-icon (click)="moveToCheckout()" id="homeIcon" [icon]="cartIcon" size="2x"></fa-icon>
-</div>
-<section class="container">
+<section class="myContainer">
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" id="muffysLink">Muffy's Coffee Shop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <h5 id="responsiveH5">Muffy's</h5>
+            <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!--class="collapse navbar-collapse"-->
+        <div id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <div id="homeIcon">
+              
+            <div class="navIconsDiv">
                 <li id="homeLink" class="nav-item active">
                     <a class="nav-link" (click)="moveTo('')">Home
                         <fa-icon id="homeIcon" [icon]="homeIcon" size="1x"></fa-icon>
                         <span class="sr-only">(current)</span></a>
                 </li>
             </div>
-            <div>
+
+            <div class="navIconsDiv">
                 <li id="aboutUsLink" class="nav-item active">
                     <a class="nav-link" (click)="moveTo('about-us')">About Us
                         <fa-icon id="aboutUsIcon" [icon]="aboutUsIcon" size="1x"></fa-icon>
                         <span class="sr-only">(current)</span></a>
                 </li>
             </div>
-            <div>
+
+            <div class="navIconsDiv">
                 <li id="menuLink" class="nav-item active">
                     <a class="nav-link" (click)="moveTo('menu')">Menu
                         <fa-icon id="menuIcon" [icon]="menuIcon" size="1x"></fa-icon>
                         <span class="sr-only">(current)</span></a>
                 </li>
             </div>
-            <div>
+
+            <div class="navIconsDiv">
                 <li id="forumLink" class="nav-item active">
                     <a class="nav-link" (click)="moveTo('forum')">Forum
                         <fa-icon id="forumIcon" [icon]="forumIcon" size="1x"></fa-icon>
                         <span class="sr-only">(current)</span></a>
                 </li>
             </div>
-            <div>
+
+            <div class="navIconsDiv">
                 <li id="logInLink" class="nav-item active">
                     <a class="nav-link" (click)="moveTo('login')">Log In
                         <fa-icon id="signInIcon" [icon]="signInIcon" size="1x"></fa-icon>
                         <span class="sr-only">(current)</span></a>
                 </li>
             </div>
+
+            <div class="navIconsDiv">
+                <li id="slashDiv" class="nav-item active">
+                    <a class="nav-link" (click)="moveTo('login')">/
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
+            <div class="navIconsDiv">
+                <li id="registerLink" class="nav-item active">
+                    <a class="nav-link" (click)="moveTo('register')">Register
+                        <fa-icon id="userEditIcon" [icon]="userEditIcon" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
+            <div class="navIconsDiv">
+                <li id="registerLink" class="nav-item active">
+                    <a class="nav-link" (click)="moveToWithFire()">Settings
+                        <fa-icon id="userEditIcon" [icon]="userCog" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
+            <div class="navIconsDiv">
+                <li id="cartLink" class="nav-item active">
+                    <a class="nav-link" (click)="moveToCheckout()">{{num}}
+                        <fa-icon id="cartIcon" [icon]="cartIcon" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
     </nav>
 </section>
-
 </div>

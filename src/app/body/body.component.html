@@ -1,21 +1,18 @@
+
 <div id="mainBody">
 
     <div id="sideMiniForumDiv">
+        <h4 id="forumPostsH5">Forum Posts</h4>
         <div *ngFor="let post of myLimitedForumPostsArray">
             <div id="postDiv" (click)="moveToForum(post.postId)">
                 <h5>{{post.postTitle}}</h5>
-                <p>{{post.postBody}}</p>
+                <p id="pContent">"{{post.postContent}}"</p>
+                <p id="pDate">{{post.postDate | shortDate}}</p>
+                <p id="pCreator">{{post.postCreator}}</p>
             </div>
         </div>
     </div>
 
-    <div id="followUsDiv">
-        <h4>Follow Us</h4>
-        <fa-icon id="facebookIcon" [icon]="fbIcon" size="4x" (click)="openPage('http://www.facebook.com')"></fa-icon>
-        <fa-icon id="twitterIcon" [icon]="twIcon" size="4x" (click)="openPage('http://www.twitter.com')"></fa-icon>
-        <fa-icon id="instegramIcon" [icon]="inIcon" size="4x" (click)="openPage('http://www.instegram.com')"></fa-icon>
-        <fa-icon id="googleIcon" [icon]="googleIcon" size="4x" (click)="openPage('http://www.googleplus.com')"></fa-icon>
-    </div>
 
     <div id="resHelpHoursDiv">
 
@@ -39,6 +36,14 @@
         <p>Saturday Closed</p>
     </div>
     
+    </div>
+
+    <div id="followUsDiv">
+        <h4>Follow Us</h4>
+        <fa-icon id="facebookIcon" [icon]="fbIcon" size="3x" (click)="openPage('http://www.facebook.com')"></fa-icon>
+        <fa-icon id="twitterIcon" [icon]="twIcon" size="3x" (click)="openPage('http://www.twitter.com')"></fa-icon>
+        <fa-icon id="instegramIcon" [icon]="inIcon" size="3x" (click)="openPage('http://www.instegram.com')"></fa-icon>
+        <fa-icon id="googleIcon" [icon]="googleIcon" size="3x" (click)="openPage('http://www.googleplus.com')"></fa-icon>
     </div>
 
 </div>

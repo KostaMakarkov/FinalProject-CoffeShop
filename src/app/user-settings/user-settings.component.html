@@ -1,0 +1,47 @@
+
+
+
+<section class="container" id="userSettings">
+    <nav  id="userSettingsNav">
+        <div  id="navbarSupportedContent">
+
+          <ul>
+
+            <div class="liClass" *ngIf="showAccountInfo">
+                <li id="accountInfoLi">
+                    <a class="nav-link" (click)="moveTo('')" >My Account Info
+                        <fa-icon id="info" [icon]="info" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+            
+            <div class="liClass">
+                <li id="postsCommentsLi">
+                    <a class="nav-link" (click)="moveTo('posts-and-comments')" >My Posts and Comments
+                        <fa-icon id="postsAndComments" [icon]="postsAndComments" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
+            <div class="liClass">
+                <li id="orderHistoryLi" >
+                    <a class="nav-link" (click)="moveTo('order-history')">My Orders
+                        <fa-icon id="orders" [icon]="orders" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
+            <div class="liClass">
+                <li id="signOutLi">
+                    <a class="nav-link" (click)="signOutFnc()">Sign Out
+                        <fa-icon id="signOut" [icon]="signOut" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<router-outlet></router-outlet>

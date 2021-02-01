@@ -7,28 +7,29 @@
     width: 50%;
     margin: auto;
     margin-top: 25px;
-    height: 350px;
+    height: 750px;
     padding: 25px;
     margin-bottom: 25px;
     border: 5px solid brown;
     border-radius: 15px;
-}
-#createAreservation:hover{
-    transition: 700ms;
-    height: 370px;
-    width: 55%;
 }
 
 h2{
     text-align: center;
     color: #7b563c;
 }
+section{
+    text-align: center;
+}
 input{
-    display: block;
+    display: inline-block;
     width: 300px;
-    height: 40px;
-    border-radius: 15px;
-    border: 0px;
+    height: 45px;
+    border-radius: 0px 0px 50px 0px;
+    border-top: 2px solid #7b563c;
+    border-right: 1px solid #7b563c;
+    border-bottom: 2px solid #7b563c;
+    border-left: 0px;
     padding: 10px;
     margin: auto;
     margin-top: 25px;
@@ -50,4 +51,46 @@ button:hover{
     background-color: #7b563c;
     height: 50px;
     width: 160px;
+}
+
+label{
+    margin: 5px;
+    border: 2px solid #7b563c;
+    width: 265px;
+    height: 45px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: #7b563c;
+    color: beige;
+    text-align: center;
+    border-radius: 50px 0px 0px 0px;
+
+}
+
+span{
+    color: red;
+    display: block;
+    text-align: center;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
 }

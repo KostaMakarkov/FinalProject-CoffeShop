@@ -1,4 +1,7 @@
 
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+  </div>
 
 <div id="displayWantedPost">
     <div id="wantedPost" *ngFor="let post of myWantedPost">
@@ -10,12 +13,32 @@
     </div>
     <div id="sendResume">
         <h3 id="h3Resume">Send us your resume and we will contact you</h3>
-        <form [formGroup]="myForm" (submit)="sendApplication()">
+        <form [formGroup]="wantedPostForm" (submit)="sendApplication()">
+
+        <section>
+            <label for="candidateEmail">Enter Your Email</label>
             <input type="email" name="candidateEmail" id="candidateEmail" placeholder="Enter your Email" formControlName="candidateEmail">
+            <span class="help-block" *ngIf="!wantedPostForm.get('candidateEmail').valid && wantedPostForm.get('candidateEmail').touched">Enter a Valid Email</span>
+        </section>
+            
+        <section>
+            <label for="">Enter Your Full Name</label>
             <input type="text" name="candidateName" id="candidateName" placeholder="Enter your full name" formControlName="candidateName">
+            <span class="help-block" *ngIf="!wantedPostForm.get('candidateName').valid && wantedPostForm.get('candidateName').touched">Enter Your Full Name</span>
+        </section>
+
+        <section>
+            <label for="">Enter Phone Number</label>
             <input type="number" name="candidatePhone" id="candidatePhone" placeholder="Enter your phone number" formControlName="candidatePhone">
+            <span class="help-block" *ngIf="!wantedPostForm.get('candidatePhone').valid && wantedPostForm.get('candidatePhone').touched">Enter a Valid Phone Number</span>
+        </section>
+
+        <section>
+            <label for="candidateResume">Add Your Resume *Optional*</label>
             <input type="file" name="candidateResnume" id="candidateResume" placeholder="Upload your resume" formControlName="candidateResnume">
-            <button>Send</button>
+        </section>
+
+        <button [disabled]="!wantedPostForm.valid">Send</button>
         </form>
     </div>
 </div>

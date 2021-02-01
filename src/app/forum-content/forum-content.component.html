@@ -1,20 +1,23 @@
 
 
 
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+  </div>
 
 
 <div id="showPostsDiv" *ngFor="let post of myForumPost">
     <section id="container">
         <div id="postHeaderDiv">
         <div id="postHeader">
-            <p id="titleP">{{post.postTitle}}</p>
-            <p id="creatorP">Created by {{post.postCreator}}</p>
-            <p id="dateP">{{post.postDate | shortDate}}</p>
+            <p id="titleP">Title : <span class="titlePspan">{{post.postTitle}}</span></p>
+            <p id="creatorP">Created by : <span class="titlePspan">{{post.postCreator}}</span></p>
+            <p id="dateP">Posted On : <span class="titlePspan">{{post.postDate | shortDate}}</span></p>
         </div>
     </div>
-        <section id="container" id="bodyContainer">
+        <section id="bodyContainer">
             <div id="postContent">
-                <p id="pBody">{{post.postBody}}</p>
+                <p id="pBody">{{post.postContent}}</p>
             </div>
             <hr>
             <h3 id="commentsH3">Comments</h3>
@@ -31,11 +34,22 @@
             <hr>
             <div id="newPostDiv">
                 <h3>Add Comment</h3>
-                <form [formGroup]="myForm" (submit)="addNewComment()">
+                <form [formGroup]="commentForm" (submit)="addNewComment()">
+
+                <div>
                     <input type="email" #emailInput id="emailInput" placeholder="Enter Email" formControlName="commentEmail">
+                    <span class="help-block" *ngIf="!commentForm.get('commentEmail').valid && commentForm.get('commentEmail').touched">Enter Email In Order To Post A Comment</span>
+
+                </div>
                   <hr>
+
+                <div>
                     <textarea id="textContentInput" #textContentInput cols="100" rows="5" formControlName="commentBody" placeholder="Enter your message"></textarea>
-                  <button id="addComment">Post Comment</button>
+                    <span class="help-block" *ngIf="!commentForm.get('commentBody').valid && commentForm.get('commentBody').touched">Cannot Post Comment With An Empty Fillbox</span>
+
+                </div>
+
+                  <button id="addComment" [disabled]="!commentForm.valid">Post Comment</button>
                   <div id="msgDiv" *ngIf="msg">{{msg}}</div>
                   <hr>
                 </form>
@@ -43,4 +57,3 @@
         </section>
     </section>
 </div>
-

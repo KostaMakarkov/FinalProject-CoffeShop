@@ -1,0 +1,99 @@
+
+
+
+h2{
+    text-align: center;
+    font-family: cursive;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+section{
+    font-family: cursive;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 45px;
+    display: block;
+}
+form{
+    text-align: center;
+    background-color: #c8a271;
+    height: 565px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 85%;
+    margin: auto;
+}
+
+label{
+    margin: 5px;
+    font-weight: 600;
+    font-size: 19px;
+    display: block;
+}
+
+input{
+    width: 70%;
+    margin: auto;
+    color: #533210;
+    font-size: 15px;
+    display: block;
+    background-color: moccasin;
+}
+
+button{
+    height: 35px;
+    width: 100px;
+    border: 2px solid #533210;
+    background-color: #ffe4b5;
+    color: #533210;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+button:hover{
+    background-color: #533210;
+    color: #c8a271;
+}
+span{
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: red;
+}
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+@media(max-width:800px){
+    h2{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    form section{
+        height: 150px;
+    }
+    form section label{
+        font-size: 10px;
+        margin: 10px auto;
+    }
+    span{
+        font-size: 10px;
+    }
+    #FirstnameInput{
+        font-size: 10px;
+        width: 95%
+    }
+    form{
+        position: sticky;
+        top: 25px;
+    }
+
+    form section button{
+        font-size: 10px;
+        height: 25px;
+        width: 50px;
+    }
+}

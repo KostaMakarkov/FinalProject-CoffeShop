@@ -1,4 +1,8 @@
 
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+</div>
+
 <div id="myMenu">
 <div id="myProducts">
 <div id="menuDivCoffee">
@@ -11,24 +15,23 @@
                 <div id="sizeSelect">
                     <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
                         <label for="sizeSmall">{{dish.dishSize[0]}}</label>
-                        <button (click)="selectedSize(dish.dishPrice[0], dish.dishSize[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
+                        <button (click)="selectedSize(dish.dishPriceId[0].small, dish.dishName, dish.dishPrice[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
                     </section>
 
                     <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
                         <label for="sizeMedium">{{dish.dishSize[1]}}</label>
-                        <button (click)="selectedSize(dish.dishPrice[1], dish.dishSize[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
+                        <button (click)="selectedSize(dish.dishPriceId[1].medium, dish.dishName, dish.dishPrice[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
                     </section>
 
                     <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
                         <label for="sizeLarge">{{dish.dishSize[2]}}</label>
-                        <button (click)="selectedSize(dish.dishPrice[2], dish.dishSize[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
+                        <button (click)="selectedSize(dish.dishPriceId[2].large, dish.dishName, dish.dishPrice[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
                     </section>
                 </div>
             </div>
             <div id="imgDiv">
                 <img src="{{dish.dishPicture}}">
             </div>
-            <button (click)="addToCart(dish)">Add To Order <fa-icon *ngIf="activateIcon" id="veganIcon" [icon]="checkIcon" size="2x"></fa-icon></button>
         </div>
     </div>
 </div>
@@ -43,24 +46,23 @@
                     <div id="sizeSelect">
                         <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
                             <label for="sizeSmall">{{dish.dishSize[0]}}</label>
-                            <button (click)="selectedSize(dish.dishPrice[0], dish.dishSize[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
+                            <button (click)="selectedSize(dish.dishPriceId[0].small, dish.dishName, dish.dishPrice[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
                         </section>
     
                         <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
                             <label for="sizeMedium">{{dish.dishSize[1]}}</label>
-                            <button (click)="selectedSize(dish.dishPrice[1], dish.dishSize[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
+                            <button (click)="selectedSize(dish.dishPriceId[1].medium, dish.dishName, dish.dishPrice[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
                         </section>
     
                         <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
                             <label for="sizeLarge">{{dish.dishSize[2]}}</label>
-                            <button (click)="selectedSize(dish.dishPrice[2], dish.dishSize[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
+                            <button (click)="selectedSize(dish.dishPriceId[2].large, dish.dishName, dish.dishPrice[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
                         </section>
                     </div>
                 </div>
                 <div id="imgDiv">
                     <img src="{{dish.dishPicture}}">
                 </div>
-                <button (click)="addToCart(dish)">Add To Order</button>
             </div>
         </div>
         </div>
@@ -75,24 +77,23 @@
                             <div id="sizeSelect">
                                 <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
                                     <label for="sizeSmall">{{dish.dishSize[0]}}</label>
-                                    <button (click)="selectedSize(dish.dishPrice[0], dish.dishSize[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
+                                    <button (click)="selectedSize(dish.dishPriceId[0].small, dish.dishName, dish.dishPrice[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
                                 </section>
             
                                 <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
                                     <label for="sizeMedium">{{dish.dishSize[1]}}</label>
-                                    <button (click)="selectedSize(dish.dishPrice[1], dish.dishSize[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
+                                    <button (click)="selectedSize(dish.dishPriceId[1].medium, dish.dishName, dish.dishPrice[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
                                 </section>
             
                                 <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
                                     <label for="sizeLarge">{{dish.dishSize[2]}}</label>
-                                    <button (click)="selectedSize(dish.dishPrice[2], dish.dishSize[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
+                                    <button (click)="selectedSize(dish.dishPriceId[2].large, dish.dishName, dish.dishPrice[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
                                 </section>
                             </div>
                         </div>
                         <div id="imgDiv">
                             <img src="{{dish.dishPicture}}">
                         </div>
-                        <button (click)="addToCart(dish)">Add To Order</button>
                     </div>
                 </div>
             </div>
@@ -100,8 +101,8 @@
 <div id="showOrderDiv">
     <div id="orderDiv">
     <h3>Current Order</h3>
-    <div id="orderDivItems" *ngFor="let order of currentOrder">
-        <h5>({{order.dishSize}}) {{order.dishName}} - {{order.dishPrice | currency:'ILS':'symbol'}}</h5>
+    <div id="orderDivItems" *ngFor="let show of showCurrentOrder">
+        <h5>{{show.dishName}} {{show.dishPrice | currency:'ILS':'symbol'}}  <span (click)="removeItem(show.dishId)"><fa-icon id="trashIcon" [icon]="trashIcon" size="1x"></fa-icon></span></h5>
     </div>
     <hr>
     <div id="sumDiv">
@@ -109,6 +110,8 @@
     </div>
     <div id="proceedToPay">
         <button (click)="proceedToCheckout()">Proceed To CheckOut</button>
+        <p>{{errMsg}}</p>
+        <button (click)="clearOrder()">Clear Order</button>
     </div>
 </div>
 </div>

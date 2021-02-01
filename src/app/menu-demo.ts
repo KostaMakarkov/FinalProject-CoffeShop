@@ -1,5 +1,4 @@
-import { DishPrice } from "./dish-price";
-import { DishSize } from "./dish-size";
+
 
 export class MenuDemo {
     dishId: string;
