@@ -5,7 +5,6 @@
 }
 
 #postHeader{
-    background-color: wheat;
     height: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -13,13 +12,16 @@
     color: #7b563c;
     font-size: 20px;
     font-weight: 600;
+    background-color: burlywood;
+    border-radius: 5px;
 }
 #postHeaderDiv{
     display: block;
     margin: auto;
-    width: 85%;
+    width: fit-content;
     margin-top: 25px;
     margin-bottom: 25px;
+    padding-top: 25px;
 }
 #commentsH3{
     text-align: center;
@@ -42,9 +44,10 @@
 }
 #postContent{
     background-color: burlywood;
-    border-radius: 15px;
-    width: 60%;
+    border-radius: 5px;
+    width: 45%;
     margin: auto;
+    text-align: center;
 }
 #bodyContainer{
     background-color: wheat;
@@ -74,7 +77,7 @@
     display: block;
     border-radius: 15px;
     border: 0px;
-    padding: 5px;
+    padding: 10px;
     color: #7b563c;
     font-weight: 600;
 
@@ -86,6 +89,7 @@
     border-radius: 15px;
     color: #7b563c;
     font-weight: 600;
+    padding: 10px
 }
 #addComment{
     margin:auto;
@@ -109,7 +113,7 @@
 #commentDiv{
     background-color: burlywood;
     border-radius: 15px;
-    width: 60%;
+    width: fit-content;
     margin: auto;
 }
 #showCommentsDiv{
@@ -117,8 +121,9 @@
 }
 #commentPbody{
     margin: 0px 0px 5px 10px;
-    font-weight: 500;
+    font-weight: 600;
     color: #7b563c;
+    text-align: center;
 }
 #dateAndTimeDiv{
     display: flex;
@@ -166,6 +171,10 @@ span{
     background-color: #4b3424;
     border-radius: 50%;
     border: 2px solid #4b3424;
+}
+
+::placeholder{
+    color: #4b3424;
 }
 
 @media(max-width:800px){

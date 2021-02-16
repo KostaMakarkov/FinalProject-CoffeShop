@@ -1,0 +1,63 @@
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+#additionalNotesDiv h3{
+    text-align: center;
+    margin: 10px 0px 30px 0px;
+    font-weight: 600;
+    color: #4b3424;
+}
+
+
+#additionalNotesDiv{
+    width: 35%;
+    border: 3px solid #4b3424;
+    border-radius: 5px;
+    background-color: moccasin;
+    margin: 35px auto;
+    padding: 20px;
+    height: fit-content;
+    font-family: cursive;
+    color: #4b3424;
+}
+::placeholder{
+    color: burlywood;
+}
+
+#additionalNotesDiv button{
+    display: block;
+    margin: auto;
+    width: 160px;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid #4B3424;
+    color: #4B3424;
+    background-color: beige;
+    margin-top: 50px;
+}
+#additionalNotesDiv button:hover{
+    border: 2px solid beige;
+    color: beige;
+    background-color: #4B3424;
+}
+#additionalNotesDiv button:active{
+    border: 2px solid #4B3424;
+    color: #4B3424;
+    background-color: beige;
+}

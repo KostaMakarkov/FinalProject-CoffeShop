@@ -1,0 +1,106 @@
+::placeholder{
+    color: burlywood;
+}
+
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+#userDetails{
+    display: block;
+    width: 45%;
+    margin: 25px auto;
+    height: fit-content;
+    padding: 25px;
+    background-color: moccasin;
+    border-radius: 5px;
+    font-family: cursive;
+}
+#userDetails h3{
+    text-align: center;
+    margin: 10px 0px 30px 0px;
+    font-weight: 600;
+    color: #4b3424;
+}
+
+#userDetails section{
+    display: block;
+    text-align: center;
+    margin: 5px 0px 30px 0px
+}
+#userDetails label{
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    background-color: #F5F5DC;
+    color: #4B3424;
+    font-weight: 600;
+    border: 2px solid #4B3424;
+    border-radius: 40px 5px 5px 5px;
+    margin-right: 15px;
+    margin-bottom: 0px;
+    border-right: 0px;
+}
+#userDetails input{
+    display: inline-block;
+    width: 50%;
+    background-color: #4B3424;
+    color: moccasin;
+    border: 2px solid burlywood;
+    border-radius: 5px 5px 30px 5px;
+    border-left: 0px;
+}
+
+#userDetails span{
+    display: block;
+    margin: 15px;
+    color: red;
+    padding: 5px;
+}
+
+#userDetails button{
+    display: block;
+    margin: auto;
+    width: 160px;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid #4B3424;
+    color: #4B3424;
+    background-color: beige;
+    margin-top: 50px;
+}
+#userDetails button:hover{
+    border: 2px solid beige;
+    color: beige;
+    background-color: #4B3424;
+}
+#userDetails button:active{
+    border: 2px solid #4B3424;
+    color: #4B3424;
+    background-color: beige;
+}
+
+::placeholder{
+    color: moccasin;
+}
+
+#userDetails input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}

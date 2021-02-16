@@ -1,0 +1,26 @@
+
+<div id="goBack">
+  <fa-icon id="backIcon" [icon]="lArrowIcon" size="2x" (click)="goBackTo()"></fa-icon>
+</div>
+
+
+
+
+<div id="checkoutDiv">
+    <div id="presentOrderItemsDiv" *ngIf="myOrderArry">
+        <h3 class="orderH3">Your Order</h3>
+      <div id="orderItems" *ngFor="let dish of myOrderArry">
+        <div id="item">
+          <div id="dishDiv">
+            <h3>
+              {{ dish.dishName }} {{ dish.dishSize }} |
+              {{ dish.dishPrice | currency: "ILS":"symbol" }}
+            </h3>
+          </div>
+        </div>
+      </div>
+      <h3 class="totalSum">
+        Total Sum: {{ totalSum | currency: "ILS":"symbol" }}
+      </h3>
+      <button (click)="proceedToNext()">Proceed <fa-icon id="rArrowIcon" [icon]="rArrowIcon" size="1x" (click)="goBackTo()"></fa-icon></button>
+    </div>

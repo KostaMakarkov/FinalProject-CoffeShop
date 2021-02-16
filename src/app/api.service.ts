@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AddressChange } from './address-change';
 import { CommentDemo } from './comment-demo';
+import { ContactUs } from './contact-us';
 import { DobChange } from './dob-change';
 import { ForumDemo } from './forum-demo';
 import { LastnameChange } from './lastname-change';
@@ -12,6 +13,7 @@ import { Orderdemo } from './orderdemo';
 import { Orderdetailsdemo } from './orderdetailsdemo';
 import { PasswordChange } from './password-change';
 import { PhoneChange } from './phone-change';
+import { ReservationDemo } from './reservation-demo';
 import { UserDemo } from './user-demo';
 import { UsernameChange } from './username-change';
 import { WantedDemo } from './wanted-demo';
@@ -30,6 +32,8 @@ export class ApiService {
   serverUrlOrder = environment.orderUrl;
   serverUrlUsers = environment.usersUrl;
   serverUrlmenuOrderingPrices = environment.menuOrderingPricesUrl;
+  serverUrlContact = environment.contactUsUrl;
+  serverUrlReservations = environment.reservationsUrl;
 
   //Forum API//
   getAllForumPosts():Observable<ForumDemo[]>{
@@ -52,6 +56,10 @@ export class ApiService {
   };
 
   //Forum Comments API//
+
+  getAllComments():Observable<CommentDemo[]>{
+    return this.http.get<CommentDemo[]>(this.serverUrlComments);
+  };
 
   getPostComments(id):Observable<CommentDemo[]>{
     return this.http.get<CommentDemo[]>(`${this.serverUrlComments}/${id}`);
@@ -85,6 +93,18 @@ export class ApiService {
   getDishesByCategory(dishCategory):Observable<MenuDemo[]>{
     return this.http.get<MenuDemo[]>(`${this.serverUrlMenu}/${dishCategory}`);
   };
+  getSingleDish(dishId):Observable<MenuDemo>{
+    return this.http.get<MenuDemo>(`${this.serverUrlMenu}/getSingleDish/${dishId}`);
+  };
+  addNewDish(dish):Observable<MenuDemo>{
+    return this.http.post<MenuDemo>(this.serverUrlMenu, dish);
+  }
+  editDish(dish):Observable<MenuDemo>{
+    return this.http.put<MenuDemo>(this.serverUrlMenu, dish);
+  }
+  deleteDish(dishId):Observable<string>{
+    return this.http.delete<string>(`${this.serverUrlMenu}/${dishId}`);
+  };
 
 
   //Order API//
@@ -103,8 +123,20 @@ export class ApiService {
   sendOrder(order):Observable<any[]>{
     return this.http.post<any[]>(`${this.serverUrlOrder}/orderSummary`, order);
   }
+  myOrderHistory(email):Observable<any>{
+    return this.http.get<any[]>(`${this.serverUrlOrder}/get/orderSummary/${email}`)
+  }
+  allOrdersHistory():Observable<any[]>{
+    return this.http.get<any[]>(this.serverUrlOrder);
+  };
 
   //Users API//
+  getAllUsers():Observable<UserDemo[]>{
+    return this.http.get<UserDemo[]>(this.serverUrlUsers);
+  }
+  getUsersByPosition(position):Observable<UserDemo[]>{
+    return this.http.get<UserDemo[]>(`${this.serverUrlUsers}/position/${position}`);
+  }
   newUser(data):Observable<UserDemo>{
     return this.http.post<UserDemo>(this.serverUrlUsers, data);
   };
@@ -113,6 +145,9 @@ export class ApiService {
   };
   getUser(email):Observable<UserDemo>{
     return this.http.get<UserDemo>(`${this.serverUrlUsers}/user/${email}`);
+  }
+  getUserById(userId):Observable<UserDemo>{
+    return this.http.get<UserDemo>(`${this.serverUrlUsers}/user/userId/${userId}`)
   }
   editFirstname(editData):Observable<UsernameChange>{
     return this.http.put<UsernameChange>(this.serverUrlUsers, editData);
@@ -132,8 +167,21 @@ export class ApiService {
   editAddress(editAddress):Observable<AddressChange>{
     return this.http.put<AddressChange>(`${this.serverUrlUsers}/editAddress`, editAddress);
   }
+  editPosition(editData):Observable<any>{
+    return this.http.put<any>(`${this.serverUrlUsers}/positionChange`, editData);
+  };
   check():Observable<any>{
     return this.http.get<any>(`${this.serverUrlUsers}/checkCookie`);
+  }
+
+  //Contact-Us//
+  sendEmail(email):Observable<ContactUs>{
+    return this.http.post<ContactUs>(this.serverUrlContact, email)
+  }
+
+  //reservations//
+  newReservation(reservations):Observable<ReservationDemo>{
+    return this.http.post<ReservationDemo>(`${this.serverUrlReservations}/addReservation`, reservations);
   }
 
 }

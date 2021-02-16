@@ -1,0 +1,64 @@
+
+
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
+  </div>
+
+
+<div id="contactUsDiv">
+    <div id="teleAndAddress">
+        <h2>Contact Us Service</h2>
+        <div>
+            <h4>If there is an issue you would like to discuss with us, there are several ways you can get in touch with us.</h4>
+            <div id="numAndAddress">
+            <section>
+                <h3>Our Numbers:</h3>
+                <h5>Restaurant number: <span>0501234567</span></h5>
+                <h5>Manager number: <span>0501234568</span></h5>
+            </section>
+            <section>
+                <h3>Our Address:</h3>
+                <h5>Be`er Sheva, lorem ipsum Street 48</h5>
+            </section>
+            </div>
+            <section id="sendEmailDiv">
+                <h3>Or send us an email:</h3>
+                <div id="sendEmail">
+                    <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+                        <section>
+                            <label for="fullNameInput">Full Name</label>
+                            <input type="text" id="fullNameInput" class="form-control" formControlName="fullName" placeholder="Enter Your Full Name">
+                            <span class="help-block" *ngIf="!contactForm.get('fullName').valid && contactForm.get('fullName').touched">Must enter name to send</span>
+                        </section>
+
+                        <section>
+                            <label for="emailInput">Email</label>
+                            <input type="email" id="emailInput" class="form-control" formControlName="email" placeholder="Enter Your Email Address">
+                            <span class="help-block" *ngIf="!contactForm.get('email').valid && contactForm.get('email').touched">Must enter email address to send</span>
+                        </section>
+
+                        <section>
+                            <label for="phoneInput">Phone Number</label>
+                            <input type="number" id="phoneInput" class="form-control" formControlName="phone" placeholder="Enter your phone number">
+                            <span class="help-block" *ngIf="!contactForm.get('phone').valid && contactForm.get('phone').touched">Must enter phone number to send</span>
+                        </section>
+
+                        <section>
+                            <label for="titleInput">Title</label>
+                            <input type="text" id="titleInput" class="form-control" formControlName="title" placeholder="Enter a title to your message">
+                            <span class="help-block" *ngIf="!contactForm.get('title').valid && contactForm.get('title').touched">Must enter a title to send</span>
+                        </section>
+
+                        <section>
+                            <label for="contentInput" id="contentLabel">Your Message</label>
+                            <textarea cols="30" rows="10" id="contentInput" class="form-control" formControlName="content" placeholder="Enter your message"></textarea>
+                            <span class="help-block" *ngIf="!contactForm.get('content').valid && contactForm.get('content').touched">Must enter a message to send</span>
+                        </section>
+
+                        <button [disabled]="!contactForm.valid">Send Email<fa-icon *ngIf="activateIcon" id="checkIcon" [icon]="checkIcon" size="1x"></fa-icon></button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

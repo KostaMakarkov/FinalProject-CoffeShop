@@ -21,7 +21,7 @@ h3{
     background: moccasin;
     border-radius: 10px;
     display: inline-block;
-    height: 700px;
+    height: fit-content;
 }
 
 section{
@@ -32,6 +32,8 @@ section{
 #addressDiv{
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+    width: 90%;
 }
 
 span{
@@ -78,8 +80,14 @@ button:hover{
     background-color: moccasin;
     width: 46%;
     margin: 15px;
-    height: 700px;
+    height: 810px;
     border-radius: 10px;
+    padding: 25px;
+}
+#stickyDiv{
+    position: sticky;
+    top: 20px;
+    bottom: 10px;
 }
 #goBack{
     position: absolute;

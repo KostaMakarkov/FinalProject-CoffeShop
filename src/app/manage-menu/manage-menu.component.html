@@ -1,0 +1,47 @@
+
+
+<div id="currentMenuDiv">
+
+<div id="categoryOptionDiv">
+<label for="categoryOption">Select Category:</label>
+<select id="categoryOption" (change)="changeList($event.target.value)">
+  <option value="none">None</option>
+  <option value="Appetizer">Appetizers</option>
+  <option value="Entree">Entrees</option>
+  <option value="Dessert">Desserts</option>
+  <option value="HotBeverage">Hot Beverages</option>
+  <option value="ColdBeverages">Cold Beverages</option>
+  <option value="all">All Dishes</option>
+</select>
+</div>
+
+    <div id="showMenuDiv">
+          <h3>Current Menu</h3>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th class="tDishName" scope="col">Dish Name</th>
+                    <th class="tDishPic" scope="col">Dish Picture</th>
+                    <th class="tDishCategory" scope="col">Dish Category</th>
+                    <th class="tDishSize" scope="col">Dish Price</th>
+                    <th class="tDishDescription" scope="col">Dish Description</th>
+                    <th class="tDishVegan" scope="col">Dish Vegan Option</th>
+                    <th class="tDishChange" scope="col">Dish Edit</th>
+                    <th class="tDishDelete" scope="col">Dish Delete</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let dish of myMenuArry">
+                  <tr>
+                    <td class="tDishName" scope="col">       {{dish.dishName}}</td>
+                    <td class="tDishPic" scope="col"><img src="{{dish.dishPicture}}" height="70px" width="70px"></td>
+                    <td class="tDishCategory" scope="col">   {{dish.dishCategory}}</td>
+                    <td class="tDishSize" scope="col">{{dish.dishPrice | currency:'ILS':'symbol'}}</td>
+                    <td class="tDishDescription" scope="col">{{dish.dishDescription}}</td>
+                    <td class="tDishVegan" scope="col">{{dish.dishVeganOption}}</td>
+                    <th class="tDishChange" scope="col"><button (click)="moveTo(dish.dishId)">Edit</button></th>
+                    <th class="tDishDelete" scope="col"><fa-icon id="deleteIcon" [icon]="deleteIcon" size="2x" (click)="deleteDish(dish.dishId)"></fa-icon></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+</div>

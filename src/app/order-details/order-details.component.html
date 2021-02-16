@@ -1,0 +1,38 @@
+
+<div id="goBack">
+    <fa-icon id="backIcon" [icon]="lArrowIcon" size="2x" (click)="goBackTo()"></fa-icon>
+  </div>
+
+  
+<div id="userDetails">
+    <h3>Details</h3>
+    <form [formGroup]="userDetailsForm" (ngSubmit)="proceedToNext()">
+
+        <section>
+            <label for="FirstnameInput">Firstname</label>
+            <input type="text" id="FirstnameInput" class="form-control" formControlName="firstname" placeholder="Enter Your Firstname">
+            <span class="help-block" *ngIf="!userDetailsForm.get('firstname').valid && userDetailsForm.get('firstname').touched">Please enter a firstname</span>
+        </section>
+        
+        <section>
+            <label for="LastnameInput">Lastname</label>
+            <input type="text" id="LastnameInput" class="form-control" formControlName="lastname" placeholder="Enter Your Lastname">
+            <span class="help-block" *ngIf="!userDetailsForm.get('lastname').valid && userDetailsForm.get('lastname').touched">Please enter a lastname</span>
+        </section>
+        
+        <section>
+            <label for="phoneInput">Phone Number</label>
+            <input type="number"id="phoneInput" class="form-control" formControlName="phone" placeholder="Enter Your Phone Number">
+            <span class="help-block" *ngIf="!userDetailsForm.get('phone').valid && userDetailsForm.get('phone').touched">Please enter a phone number</span>
+        </section>
+        
+        <section>
+            <label for="emailInput">Email</label>
+            <input type="email" id="emailInput" class="form-control" formControlName="email" placeholder="Enter Your Email">
+            <span class="help-block" *ngIf="!userDetailsForm.get('email').valid && userDetailsForm.get('email').touched">Either Email is already taken or Email is incorrect</span>
+        </section>
+
+        <button [disabled]="!userDetailsForm.valid">Proceed <fa-icon id="rArrowIcon" [icon]="rArrowIcon" size="1x" (click)="goBackTo()"></fa-icon></button>
+
+    </form>
+</div>

@@ -36,14 +36,11 @@ export class AccountInfoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const loggedParse = JSON.parse(localStorage.getItem('user'));
-    if(loggedParse){
-      const logged = loggedParse.email;
-      if(this.auth.loggedIn()){
-        this.api.getUser(logged).subscribe(data => {
-          this.loggedUser = data;
-        });
-      };
+    const loggedId = localStorage.getItem('loggedId');
+    if(loggedId){
+      this.api.getUserById(loggedId).subscribe( (data) => {
+        this.loggedUser = data;
+      });
     }
     else{
     this.checkUser.getCurrentUser().then(user => {

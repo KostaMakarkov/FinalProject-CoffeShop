@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ReservationDemo } from '../reservation-demo';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { ApiService } from '../api.service';
 
 
 @Component({
@@ -12,10 +13,11 @@ import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 })
 export class ReservationsComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private api:ApiService) { }
 
   reservationForm:FormGroup;
   backIcon = faArrowAltCircleLeft;
+  msg:string = '';
 
   checkNum(control:FormControl): {[key:string]: boolean} {
     let phoneNumber = {'phone': String(control.value)};
@@ -32,23 +34,25 @@ export class ReservationsComponent implements OnInit {
   }
 
   sendReservation(){
-    const newReservation = new ReservationDemo(
-      this.reservationForm.controls.reservationId.value,
+    const newReservationReq = new ReservationDemo(
       this.reservationForm.controls.reservationName.value,
-      this.reservationForm.controls.reservationContactNumber.value,    
-      this.reservationForm.controls.reservationCapacity.value,   
-      this.reservationForm.controls.reservationDate.value,
-    );
-    console.log(newReservation);
+      this.reservationForm.controls.reservationContactNumber.value,
+      this.reservationForm.controls.reservationCapacity.value,
+      this.reservationForm.controls.reservationDate.value
+    )
+    this.api.newReservation(newReservationReq).subscribe();
+    this.msg = 'Reservation Send!';
+    setTimeout(() => {
+      window.location.reload();
+    }, 1500);
   };
 
   ngOnInit(): void {
     this.reservationForm = new FormGroup({
-      'reservationId' : new FormControl(''),
-      'reservationName' : new FormControl('', [Validators.required, Validators.minLength(2)]),
-      'reservationContactNumber' : new FormControl('', [Validators.required, this.checkNum]),
-      'reservationCapacity' : new FormControl('', [Validators.required, Validators.min(2)]),
-      'reservationDate' : new FormControl('', Validators.required)
+      'reservationName': new FormControl('', [Validators.required, Validators.minLength(2)]),
+      'reservationContactNumber': new FormControl('', [Validators.required, this.checkNum]),
+      'reservationCapacity': new FormControl('', [Validators.required, Validators.min(2)]),
+      'reservationDate': new FormControl('', Validators.required)
     });
 
   };

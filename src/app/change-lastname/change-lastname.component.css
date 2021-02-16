@@ -54,6 +54,9 @@ span{
 input.ng-invalid.ng-touched{
     border: 2px solid red;
 }
+::placeholder{
+    color: burlywood;
+}
 
 @media(max-width:800px){
     h2{

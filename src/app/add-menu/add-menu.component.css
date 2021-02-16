@@ -1,0 +1,125 @@
+
+#addDishDiv{
+    font-family: cursive;
+
+}
+#addDishDiv h3{
+    text-align: center;
+    color: #4b3424;
+    font-weight: 600;
+    margin-top: 25px;
+    text-decoration: underline;
+}
+
+#orderMsg{
+    display: block;
+    margin: auto;
+    color: green;
+    font-weight: 600;
+}
+
+#addDishForm{
+    width: 60%;
+    margin:  25px auto;
+    padding: 15px;
+    background-color: moccasin;
+    margin-top: 25px;
+    border: 2px solid #4b3424;
+    border-radius: 15px;
+}
+
+#addDishForm .inputSection, #textareaSection{
+    display: block;
+    margin: 15px auto;
+    width: 70%;
+}
+.veganSection{
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    width: 70%;
+}
+#veganInput{
+    width: 25px;
+    margin-left: 20px;
+}
+
+#addDishForm .inputSection label{
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    font-weight: 600;
+    background-color: beige;
+    border-radius: 25px 5px 5px 5px;
+    margin-right: 10px;
+    color: #4b3424;
+    border: 2px solid #4b3424;
+    border-right: 0px;
+}
+#textareaSection label{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-weight: 600;
+    background-color: beige;
+    border-radius: 25px 25px 5px 5px;
+    margin-right: 10px;
+    color: #4b3424;
+    border: 2px solid #4b3424;
+}
+.veganSection label{
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+    font-weight: 600;
+    background-color: beige;
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 10px;
+    color: #4b3424;
+    border: 2px solid #4b3424;
+}
+#textareaSection textarea{
+    background-color: #4b3424;
+    color: moccasin;
+}
+
+span{
+    display: block;
+    color: red;
+    text-align: center;
+    margin: 10px auto;
+}
+
+
+#addDishForm .inputSection input{
+    background-color: #4b3424;
+    display: inline-block;
+    width: 75%;
+    color: moccasin;
+    border-radius: 5px 5px 25px 5px;
+}
+
+::placeholder{
+    color: moccasin;
+}
+
+button{
+    width: 100px;
+    padding: 5px;
+    background-color: #4b3424;
+    color: moccasin;
+    border: 3px solid beige;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
+button:hover{
+    background-color: moccasin;
+    color: #4b3424;
+    border: 3px solid #4b3424;
+}
+button:active{
+    background-color: #4b3424;
+    color: moccasin;
+    border: 3px solid beige;
+}

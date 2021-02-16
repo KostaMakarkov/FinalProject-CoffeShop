@@ -18,22 +18,47 @@ export class PostsAndCommentsComponent implements OnInit {
 
   constructor(private api:ApiService, private auth:AuthService, private router:Router, private checkUser:CheckuserService) { }
 
+  //Post and comments Arrays//
   myPostsArray:ForumDemo[]=[];
   myCommentsArray:CommentDemo[]=[];
+
+  //Logged user Info//
   loggedUser:UserDemo;
+  loggedUserEmail:any;
+
+  //Icon//
   backIcon = faArrowAltCircleLeft;
+
+  //Admin Identification//
+  adminIsLogged:boolean = false;
 
 
   goBackTo(){
     this.router.navigate(['/']);
   }
 
+  changeList(value: string){
+    if(value == 'all'){
+      this.api.getAllForumPosts().subscribe(data => this.myPostsArray = data);
+      this.api.getAllComments().subscribe(data => this.myCommentsArray = data);
+    }
+    if(value == 'onlymy'){
+      this.api.getAllUserForumPosts(this.loggedUserEmail).subscribe(data => this.myPostsArray = data);
+      this.api.getUserComments(this.loggedUserEmail).subscribe(data => this.myCommentsArray = data);
+    }
+    else{
+      this.myCommentsArray = [];
+      this.myPostsArray = [];
+    }
+    
+  }
+
   deletePost(id){
-    console.log(id);
     this.api.deletePost(id).subscribe();
     this.api.deleteManyComments(id).subscribe();
     window.location.reload();
   }
+
   deleteComment(id){
     this.api.deleteComment(id).subscribe();
     window.location.reload();
@@ -47,12 +72,15 @@ export class PostsAndCommentsComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.auth.loggedIn()){
-      const loggedParse = JSON.parse(localStorage.getItem('user'));
-      const logged = loggedParse.email;
-      this.api.getUser(logged).subscribe(data => {
+      const userId = localStorage.getItem('loggedId');
+      this.api.getUserById(userId).subscribe( (data) => {
         this.loggedUser = data;
-        this.getPostsAndCommentsFromServer(logged);
-      });
+        this.loggedUserEmail = this.loggedUser.email;
+        this.getPostsAndCommentsFromServer(this.loggedUserEmail);
+        if(this.loggedUser.position == 'Admin' || this.loggedUser.position == 'Manager'){
+          this.adminIsLogged = true;
+        }
+      })
     }
     else{
       if(this.checkUser.getCurrentUser()){

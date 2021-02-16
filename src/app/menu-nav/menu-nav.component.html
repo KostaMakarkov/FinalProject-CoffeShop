@@ -1,0 +1,25 @@
+
+
+
+<div id="manageMenuDiv">
+    <ul>
+
+    <div class="liClass">
+        <li class="menuDataLi" >
+            <a class="nav-link" (click)="moveTo('')">Current Menu <fa-icon id="archiveIcon" [icon]="archiveIcon" size="1x"></fa-icon>
+                <span class="sr-only">(current)</span></a>
+        </li>
+    </div>
+
+
+    <div class="liClass">
+        <li class="menuDataLi" >
+            <a class="nav-link" (click)="moveTo('add-menu')">Add Menu <fa-icon id="addIcon" [icon]="addIcon" size="1x"></fa-icon>
+                <span class="sr-only">(current)</span></a>
+        </li>
+    </div>
+</ul>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -43,7 +43,9 @@ export class NavBarComponent implements OnInit {
     }
   }
   moveToCheckout(){
-    this.route.navigate(['/checkout']);
+    if(this.num > 0){
+      this.route.navigate(['/order-summary']);
+    }
   }
 
 

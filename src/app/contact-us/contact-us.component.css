@@ -1,0 +1,151 @@
+
+
+
+#contactUsDiv{
+    width: 98%;
+    margin: auto;
+    padding: 5px;
+    font-family: cursive;
+    color: #472f1e;
+}
+#teleAndAddress{
+    margin-top: 25px;
+}
+#teleAndAddress h2, #sendEmailDiv h3{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+#teleAndAddress h4{
+    text-align: center;
+    margin-bottom: 20px;
+    width: 60%;
+    margin: auto;
+    border-bottom: 3px solid crimson;
+    border-radius: 0px 0px 15px 15px;
+    padding-bottom: 10px;
+}
+#numAndAddress{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px
+}
+#numAndAddress section{
+    width: 45%;
+    padding: 15px;
+    text-align: center;
+    background-color: moccasin;
+    margin: 15px 25px 15px 25px;
+    border-radius: 5px;
+    border: 3px solid #7B563C;
+}
+#numAndAddress section span{
+    color: brown;
+}
+#sendEmailDiv{
+    display: block;
+    width: 70%;
+    margin: auto;
+    background: moccasin;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 3px solid #7B563C;
+}
+#sendEmail{
+    width: 60%;
+    margin: auto;
+}
+#sendEmail form section{
+    margin-bottom: 20px;
+}
+#sendEmail form section label{
+    display: inline-block;
+    width: 145px;
+    background-color: burlywood;
+    color: #7B563C;
+    padding: 5px;
+    text-align: center;
+    border-radius: 40px 5px 5px 5px;
+    margin-right: 10px;
+    border: 2px solid #7B563C;
+}
+#sendEmail form section input{
+    display: inline-block;
+    width: 70%;
+    background-color: #7B563C;
+    color: moccasin;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px 5px 40px 5px;
+}
+#sendEmail form section textarea{
+    width: 100%;
+    height: 100px;
+    background-color: #7B563C;
+    color: moccasin;
+}
+#sendEmail form section #contentLabel{
+    display: inline-block;
+    width: 100%;
+    background-color: burlywood;
+    color: #7B563C;
+    padding: 5px;
+    text-align: center;
+    border-radius: 45px 45px 5px 5px;
+    margin-right: 10px;
+    border: 2px solid #7B563C;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+    border: 2px solid red !important;
+}
+
+span{
+    display: block;
+    color: red;
+    text-align: center;
+}
+#sendEmail form button{
+    display: block;
+    margin: auto;
+    width: 130px;
+    padding: 10px;
+    border: 3px solid #7B563C;
+    background-color: burlywood;
+    color: #7B563C;
+    font-weight: 600;
+    border-radius: 5px;
+}
+#sendEmail form button:hover{
+    border: 3px solid burlywood;
+    background-color: #7B563C;
+    color: burlywood;
+}
+
+#checkIcon{
+    color: green;
+}
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+::placeholder{
+    color: burlywood;
+}

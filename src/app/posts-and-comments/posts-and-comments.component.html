@@ -3,15 +3,26 @@
   <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
 </div>
 
+<div id="categoryOptionDiv" *ngIf="adminIsLogged">
+  <label for="categoryOption">Select: </label>
+  <select id="categoryOption" (change)="changeList($event.target.value)">
+    <option value="none">None</option>
+    <option value="all">All Posts and Comments</option>
+    <option value="onlymy">Only My Posts And Comments</option>
+  </select>
+  </div>
+
 <div id="postsNcommentsDiv">
 
     <div id="showPostsDiv">
         <div id="postsDisplay">
-          <h3>My Forum Posts</h3>
+          <h3>Forum Posts</h3>
+          <div id="showTable">
             <table class="table">
                 <thead>
                   <tr>
                     <th class="tID" scope="col">Post ID</th>
+                    <th class="tID" scope="col" *ngIf="adminIsLogged">Post Creator</th>
                     <th class="tTitle" scope="col">Post Title</th>
                     <th class="tContent" scope="col">Post Content</th>
                     <th class="tDate" scope="col">Post Date</th>
@@ -21,6 +32,7 @@
                 <tbody *ngFor="let post of myPostsArray">
                   <tr>
                     <td class="tID">{{post.postId}}</td>
+                    <td class="tID" scope="col" *ngIf="adminIsLogged">{{post.postCreator}} <br> {{post.postEmail}}</td>
                     <td class="tTitle">{{post.postTitle}}</td>
                     <td class="tContent">{{post.postContent}}</td>
                     <td class="tDate">{{post.postDate | shortDate}}</td>
@@ -28,13 +40,14 @@
                   </tr>
                 </tbody>
               </table>
-
-              <h3>My Forum Comments</h3>
+            </div>
+              <h3>Forum Comments</h3>
               
               <table class="table">
                 <thead>
                   <tr>
                     <th class="tID" scope="col">Comment ID</th>
+                    <th class="tID" scope="col" *ngIf="adminIsLogged">Comment Creator</th>
                     <th class="tContent" scope="col">Comment Content</th>
                     <th class="tDate" scope="col">Comment Date</th>
                     <th class="tDelete" scope="col">Delete</th>
@@ -43,6 +56,7 @@
                 <tbody *ngFor="let comment of myCommentsArray">
                   <tr>
                     <td class="tID">{{comment.commentId}}</td>
+                    <td class="tID" scope="col" *ngIf="adminIsLogged">{{comment.commentEmail}}</td>
                     <td class="tContent">{{comment.commentBody}}</td>
                     <td class="tDate">{{comment.commentDate | shortDate}}</td>
                     <td class="tDelete"><button (click)="deleteComment(comment.commentId)">X</button></td>

@@ -11,7 +11,7 @@
         <div id="postHeaderDiv">
         <div id="postHeader">
             <p id="titleP">Title : <span class="titlePspan">{{post.postTitle}}</span></p>
-            <p id="creatorP">Created by : <span class="titlePspan">{{post.postCreator}}</span></p>
+            <p *ngIf="post.postCreator" id="creatorP">Created by : <span class="titlePspan">{{post.postCreator}}</span></p>
             <p id="dateP">Posted On : <span class="titlePspan">{{post.postDate | shortDate}}</span></p>
         </div>
     </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <hr>
-            <div id="newPostDiv">
+            <div id="newPostDiv" *ngIf="showAddComment">
                 <h3>Add Comment</h3>
                 <form [formGroup]="commentForm" (submit)="addNewComment()">
 

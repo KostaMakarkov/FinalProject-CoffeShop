@@ -1,7 +1,7 @@
 
 
 
-<section class="container" id="userSettings">
+<section id="userSettings">
     <nav  id="userSettingsNav">
         <div  id="navbarSupportedContent">
 
@@ -17,16 +17,33 @@
             
             <div class="liClass">
                 <li id="postsCommentsLi">
-                    <a class="nav-link" (click)="moveTo('posts-and-comments')" >My Posts and Comments
+                    <a class="nav-link" (click)="moveTo('posts-and-comments')" >Forum Posts and Comments
                         <fa-icon id="postsAndComments" [icon]="postsAndComments" size="1x"></fa-icon>
                         <span class="sr-only">(current)</span></a>
                 </li>
             </div>
 
+
             <div class="liClass">
                 <li id="orderHistoryLi" >
                     <a class="nav-link" (click)="moveTo('order-history')">My Orders
                         <fa-icon id="orders" [icon]="orders" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
+            <div class="liClass" *ngIf="checkAdmin">
+                <li id="usersDataLi" >
+                    <a class="nav-link" (click)="moveTo('users-data')">Users
+                        <fa-icon id="usersIcon" [icon]="usersIcon" size="1x"></fa-icon>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+
+            <div class="liClass" *ngIf="checkAdmin">
+                <li id="usersDataLi" >
+                    <a class="nav-link" (click)="moveTo('manage-menu')">Manage Menu
+                        <fa-icon id="manageMenu" [icon]="manageMenu" size="1x"></fa-icon>
                         <span class="sr-only">(current)</span></a>
                 </li>
             </div>

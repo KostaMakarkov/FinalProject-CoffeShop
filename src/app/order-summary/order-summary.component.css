@@ -1,0 +1,104 @@
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+#checkoutDiv{
+    font-family: cursive;
+    color: #4b3424;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#orderItems{
+    width: 100%;
+    margin: auto;
+}
+
+#presentOrderItemsDiv{
+    width: 35%;
+    border: 2px solid #4b3424;
+    background-color: moccasin;
+    margin: 35px auto;
+    padding: 5px;
+    height: fit-content;
+}
+
+#item{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #4b3424;
+    padding: 5px;
+    margin: 5px auto;
+    width: 98%;
+    background-color: beige;
+    border-radius: 5px;
+}
+
+#dishDiv{
+    text-align: center;
+    width: 100%;
+}
+#dishDiv h3{
+    margin: 5px;
+    font-size: 20px;
+}
+.orderH3{
+    text-align: center;
+    margin: 5px 5px 20px 5px;
+    text-decoration: underline;
+}
+
+
+.totalSum{
+    text-align: center;
+    background-color: #4b3424;
+    margin: 15px auto;
+    padding: 5px;
+    color: moccasin;
+    width: 50%;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#presentOrderItemsDiv button{
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 160px;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid #4B3424;
+    color: #4B3424;
+    background-color: beige;
+    margin-top: 50px;
+}
+#presentOrderItemsDiv button:hover{
+    border: 2px solid beige;
+    color: beige;
+    background-color: #4B3424;
+}
+#presentOrderItemsDiv button:active{
+    border: 2px solid #4B3424;
+    color: #4B3424;
+    background-color: beige;
+}
+
+::placeholder{
+    color: burlywood;
+}

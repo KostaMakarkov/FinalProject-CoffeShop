@@ -1,0 +1,52 @@
+
+
+
+
+            <div id="editDish">
+                <h3>Edit a dish</h3>
+
+                <div id="editFormDiv">
+                    <form [formGroup]="editForm" (ngSubmit)="saveChanges()">
+
+                        <section class="inputSection">
+                            <label for="dishNameInput">Dish Name</label>
+                            <input type="text" id="dishNameInput" class="form-control" formControlName="dishName">
+                            <span class="help-block" *ngIf="!editForm.get('dishName').valid && editForm.get('dishName').touched">Cannot be Empty</span>
+                        </section>
+
+                        <section class="inputSection">
+                            <label for="dishPictureInput">Dish Picture</label>
+                            <input type="text" id="dishPictureInput" class="form-control" formControlName="dishPicture" >
+                            <span class="help-block" *ngIf="!editForm.get('dishPicture').valid && editForm.get('dishPicture').touched">Cannot Be Empty</span>
+                        </section>
+
+                        <section class="inputSection">
+                            <label for="dishCategoryInput">Dish Category</label>
+                            <input type="text" id="dishCategory" class="form-control" formControlName="dishCategory">
+                            <span class="help-block" *ngIf="!editForm.get('dishCategory').valid && editForm.get('dishCategory').touched">Cannot Be Empty</span>
+                        </section>
+
+
+                        <section class="inputSection">
+                            <label for="dishPriceInput">Dish Price</label>
+                            <input type="number" id="dishPriceInput" class="form-control" formControlName="dishPrice">
+                            <span class="help-block" *ngIf="!editForm.get('dishPrice').valid && editForm.get('dishPrice').touched">Either Email is already taken or Email is incorrect</span>
+                        </section>
+
+                        <section class="textAreaSection">
+                            <label for="dishDescriptionInput">Dish Description</label>
+                            <textarea id="dishDescriptionInput" cols="30" rows="5" class="form-control" formControlName="dishDescription"></textarea>
+                            <span class="help-block" *ngIf="!editForm.get('dishDescription').valid && editForm.get('dishDescription').touched">Cannot Be Empty</span>
+                        </section>
+
+                        <section class="veganSection">
+                            <label for="dishVeganOptionInput">Dish Vegan Option</label>
+                            <input type="checkbox" id="dishVeganOptionInput" class="form-control" formControlName="dishVeganOption">
+                            <span class="help-block" *ngIf="!editForm.get('dishVeganOption').valid && editForm.get('dishVeganOption').touched">Must Select An Option</span>
+                        </section>
+                        
+                        <button [disabled]="!editForm.valid">Save Changes</button>
+                        
+                    </form>
+                </div>
+            </div>

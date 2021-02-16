@@ -4,21 +4,53 @@
   <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
 </div>
 
+<div id="categoryOptionDiv" *ngIf="adminIsLogged">
+  <label for="categoryOption">Select: </label>
+  <select id="categoryOption" (change)="changeList($event.target.value)">
+    <option value="none">None</option>
+    <option value="all">All Orders</option>
+    <option value="onlymy">Only My Orders</option>
+  </select>
+  </div>
+
+<h3>Order History</h3>
+
 <table class="table">
     <thead>
       <tr>
         <th class="tID" scope="col">Order ID</th>
+        <th class="tDetails" scope="col">Order Details</th>
         <th class="tItems" scope="col">Order Items</th>
-        <th class="tDate" scope="col">Order Date</th>
-        <th class="tCost" scope="col">Order Cost</th>
+        <th class="tAddress" scope="col">Order Address</th>
+        <th class="tNotes" scope="col">Order Notes</th>
+        <th class="tSum" scope="col">Order Sum</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="tID"></td>
-        <td class="tItems"></td>
-        <td class="tDate"></td>
-        <td class="tCost"></td>
+      <tr *ngFor="let order of orderArray">
+        <td class="tID" scope="col">
+          {{order.orderId}}
+        </td>
+        <td class="tDetails" scope="col">
+          <p class="tDetailsP">{{order.orderDetails.firstname}} {{order.orderDetails.lastname}}</p>
+          <p class="tDetailsP">0{{order.orderDetails.phone}}</p>
+          <p class="tDetailsP">{{order.orderDetails.email}}</p>
+          <p class="tDetailsP">{{order.orderDate | shortDate}}</p>
+        </td>
+        <td class="tItems" scope="col">
+          <p class="tDetailsP" *ngFor="let item of order.orderItems">{{item.dishName}} - {{item.dishSize}} - {{item.dishPrice}}</p>
+        </td>
+        <td class="tAddress" scope="col">
+          <p class="tDetailsP">{{order.orderAddress.addressCity}}</p>
+          <p class="tDetailsP">{{order.orderAddress.addressStreet}}</p>
+          <p class="tDetailsP">{{order.orderAddress.addressApartment}}</p>
+        </td>
+        <td class="tNotes" scope="col">
+          <p class="tDetailsP">Order Notes: {{order.orderNotes.orderNotes}}</p>
+          <p class="tDetailsP">Delivery Notes: {{order.orderNotes.deliveryNotes}}</p>
+          <p class="tDetailsP">Additional Notes: {{order.orderNotes.additionalNote}}</p>
+        </td>
+        <td class="tSum" scope="col">{{order.totalSum | currency:'ILS':'symbol'}}</td>  
       </tr>
     </tbody>
   </table>

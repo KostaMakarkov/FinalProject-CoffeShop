@@ -27,6 +27,9 @@ app-login{
     font-size: 25px;
     color: moccasin;
 }
+.navbar-nav.mr-auto{
+    justify-content: center;
+}
 
 #homeIcon, #aboutUsIcon, #menuIcon, #forumIcon, #signInIcon, #userEditIcon,   #cartIcon{
     color: moccasin;

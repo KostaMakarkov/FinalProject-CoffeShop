@@ -1,5 +1,35 @@
 
+#categoryOptionDiv{
+    width: 35%;
+    margin: auto;
+    text-align: center;
+}
 
+#categoryOptionDiv label{
+    background-color: beige;
+    padding: 5px;
+    font-family: cursive;
+    color: #4b3424;
+    font-weight: 600;
+    margin-right: 10px;
+    width: 160px;
+    border: 5px solid #4b3424;
+    border-radius: 10px;
+}
+
+#categoryOption{
+    display: inline-block;
+    width: 50%;
+    margin: 25px auto;
+    height: 45px;
+    background: #4b3424;
+    color: moccasin;
+    font-weight: 600;
+    font-family: cursive;
+    border: 5px solid moccasin;
+    border-radius: 10px;
+    padding: 5px;
+}
 
 table{
     display: block;
@@ -7,6 +37,14 @@ table{
     margin:25px auto;
 }
 
+h3{
+    font-family: cursive;
+    color: #20150a;
+    text-align: center;
+    margin: 25px;
+    text-decoration: underline;
+    font-weight: 600;
+}
 
 thead{
     background-color: #20150a;
@@ -20,25 +58,42 @@ tbody{
     border-radius: 5px;
 }
 .tID{
-    width: 20%;
+    width: 13%;
     vertical-align: middle;
     border-bottom: 2px solid #533210;
     border-right: 2px solid #533210;
 }
-.tItems{
-        width: 50%;
+.tDetails{
+        width: 10%;
         vertical-align: middle;
         border-bottom: 2px solid #533210;
         border-right: 2px solid #533210;
 }
-.tDate{
-    width: 10%;
+.tDetailsP{
+    display: block;
+    margin: 2px;
+    
+}
+.tItems{
+    width: 18%;
     vertical-align: middle;
     border-bottom: 2px solid #533210;
     border-right: 2px solid #533210;
 }
-.tCost{
-    width: 10%;
+.tAddress{
+    width: 15%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tSum{
+    width: 5%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tNotes{
+    width: 25%;
     vertical-align: middle;
     border-bottom: 2px solid #533210;
     border-right: 2px solid #533210;

@@ -1,0 +1,37 @@
+
+  
+  <h3>Our Users</h3>
+  
+  <table class="table">
+      <thead>
+        <tr>
+          <th class="tID" scope="col">User ID</th>
+          <th class="tDetails" scope="col">User Details</th>
+          <th class="tAddress" scope="col">User Address</th>
+          <th class="tPosition" scope="col">User Position</th>
+          <th class="tPosition" scope="col" *ngIf="checkAdmin">Change Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of myUsersArry">
+          <td class="tID" scope="col">{{user.userId}}</td>
+          <td class="tDetails" scope="col">
+            <p class="tDetailsP">{{user.firstname}} {{user.lastname}}</p>
+            <p class="tDetailsP">{{user.email}}</p>
+            <p class="tDetailsP">{{user.dateOfBirth}}</p>
+            <p class="tDetailsP">0{{user.phone}}</p>
+          </td>
+          <td class="tAddress" scope="col">
+              <p>{{user.address.addressCity}}</p>
+              <p>{{user.address.addressStreet}}</p>
+              <p>{{user.address.addressApartment}}</p>
+          </td>
+          <td class="tPosition" scope="col">{{user.position}}</td>
+          <td class="tPositionChange" scope="col" *ngIf="checkAdmin">
+              <button (click)="changeUserPosition('Admin', user.email)">Admin</button>
+              <button (click)="changeUserPosition('Manager',user.email)">Manager</button>
+              <button (click)="changeUserPosition('User',user.email)">User</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>

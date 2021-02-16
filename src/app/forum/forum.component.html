@@ -5,7 +5,7 @@
 
 <section id="container">
 
-<div id="newPostDiv">
+<div id="newPostDiv" *ngIf="isUserLogged">
   <h3>Add Post</h3>
   <form [formGroup]="forumForm" (submit)="addNewPost()">
 
@@ -25,13 +25,13 @@
     </div>
       <button id="addBtn" [disabled]="!forumForm.valid">Add Post</button>
       <span *ngIf="!forumForm.get('postContent').valid && forumForm.get('postContent').touched && !forumForm.get('postTitle').valid && forumForm.get('postTitle').touched && !forumForm.get('postEmail').valid && forumForm.get('postEmail').touched">Fill out all boxes above to post</span>
-
   </form>
 </div>
 
 
 
 <div id="showPostsDiv">
+  <h3>Posts</h3>
   <div id="singlePostDiv" *ngFor="let post of myForumArray">
     <ul>
       <li (click)="sendIdToForumContent(post.postId)">{{post.postTitle}}</li>

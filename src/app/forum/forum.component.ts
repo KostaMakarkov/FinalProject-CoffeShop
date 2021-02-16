@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { ForumDemo } from '../forum-demo';
@@ -8,6 +8,7 @@ import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../auth.service';
 import { UserDemo } from '../user-demo';
 import { CheckuserService } from '../checkuser.service';
+import { invalid } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-forum',
@@ -16,17 +17,29 @@ import { CheckuserService } from '../checkuser.service';
 })
 export class ForumComponent implements OnInit {
   constructor(private api:ApiService, private router:Router, private auth:AuthService, private checkUser: CheckuserService) {}
-   
+  
+  //Icons //
+  backIcon = faArrowAltCircleLeft;  
+
+  //Forum //
   forumForm:FormGroup;
-  loggedEmail:String = '';
-  loggedUser;
-  loggedUserName;
-  backIcon = faArrowAltCircleLeft;
-
-
-  myForumArray:ForumDemo[]=[];
+  myForumArray=[];
   oneForumPost:string;
+
+  //Post details//
+  loggedUserName = '';
   atmTime:string = 'no time';
+
+
+  //Logged user validation//
+  isUserLogged:boolean = false;
+  loggedUser:UserDemo;
+
+
+
+
+
+
 
   addNewPost(){
     this.atmTime = Date();
@@ -57,28 +70,25 @@ export class ForumComponent implements OnInit {
       this.myForumArray=data
       this.myForumArray.reverse();
     });
-    
-    if(this.auth.loggedIn()){
-      const loggedParse = JSON.parse(localStorage.getItem('user'));
-      let logged = loggedParse.email;
-      this.loggedEmail = logged;
-      this.api.getUser(logged).subscribe(data => {
-        this.loggedUser = data
+    const loggedId = localStorage.getItem('loggedId');
+    if(loggedId){
+      this.isUserLogged = true;
+      this.api.getUserById(loggedId).subscribe( (data) => {
+        this.loggedUser = data;
         this.loggedUserName = `${this.loggedUser.firstname}`+` ${this.loggedUser.lastname}`;
       });
     }
-    else{
-      if(this.checkUser.getCurrentUser()){
-        let fireLogged;
-        this.checkUser.getCurrentUser().then(user => {
-          fireLogged = user
+    if(this.checkUser.getCurrentUser()){
+      this.checkUser.getCurrentUser().then( (user:any) => {
+        const fireLogged = user;
+        if(fireLogged){
+          this.isUserLogged = true;
           this.loggedUserName = fireLogged.displayName;
-        });
+        }
         
-      }
+      });
     }
 
-    
 
     this.forumForm = new FormGroup({
       'postId': new FormControl(''),
@@ -90,6 +100,7 @@ export class ForumComponent implements OnInit {
       'addBtn': new FormControl('')
     })
   }
+
 
 }
 

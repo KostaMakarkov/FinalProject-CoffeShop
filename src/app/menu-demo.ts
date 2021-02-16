@@ -8,7 +8,7 @@ export class MenuDemo {
     dishSize: string;
     dishPrice: string;
     dishDescription: string;
-    dishVeganOption: string;
+    dishVeganOption: boolean;
     constructor(dishId, dishName, dishPicture, dishCategory, dishSize, dishPrice, dishDescription, dishVeganOption){
         this.dishId = dishId;
         this.dishName = dishName;

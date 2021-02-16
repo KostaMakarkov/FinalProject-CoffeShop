@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { UserDemo } from '../user-demo';
-import {faInfoCircle, faMailBulk, faBars, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import {faInfoCircle, faMailBulk, faBars, faSignOutAlt, faBookOpen, faUsersCog, faBook} from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../auth.service';
 import { FirebaseAuthService } from '../firebase-auth.service';
 
@@ -21,9 +21,14 @@ export class UserSettingsComponent implements OnInit {
   postsAndComments = faMailBulk;
   orders = faBars;
   signOut = faSignOutAlt;
+  reservationIcon = faBookOpen;
+  usersIcon = faUsersCog;
+  manageMenu = faBook;
 
   loggedUser:UserDemo;
   showAccountInfo:boolean = false;
+  showAllPostsAndComments:boolean = false;
+  checkAdmin:Boolean = false;
 
   logSomething(){
     console.log(this.loggedUser);
@@ -41,17 +46,30 @@ export class UserSettingsComponent implements OnInit {
   }
 
   signOutFnc(){
-    this.auth.signOut();
-    this.afAuth.signOutFromGoogle().then(success => {
+    if(this.auth.loggedIn()){
+      this.auth.signOut();
       this.route.navigate(['']);
-    })
+    }
+    else{
+      this.afAuth.signOutFromGoogle().then(success => {
+        this.route.navigate(['']);
+      })
+    }
   };
 
 
   ngOnInit(): void {
-    const logged = localStorage.getItem('token');
-    if(logged){
+    const loggedId = localStorage.getItem('loggedId');
+    if(loggedId){
       this.showAccountInfo = true;
+      this.api.getUserById(loggedId).subscribe( (data) => {
+        this.loggedUser = data;
+        if(this.loggedUser.position == 'Admin' || this.loggedUser.position == 'Manager'){
+          this.checkAdmin = true;
+          this.showAllPostsAndComments = true;
+        }
+      })
+      
     }
   };
 

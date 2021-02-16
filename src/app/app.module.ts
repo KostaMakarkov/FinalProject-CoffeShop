@@ -7,6 +7,7 @@ import { MainComponent } from './main/main.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 import { FooterComponent } from './footer/footer.component';
@@ -43,8 +44,21 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { JwPaginationModule } from 'jw-angular-pagination';
 import { environment } from 'src/environments/environment';
 import { ChangeAddressComponent } from './change-address/change-address.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { OrderAddressComponent } from './order-address/order-address.component';
+import { OrderNotesComponent } from './order-notes/order-notes.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { OrderPaymentComponent } from './order-payment/order-payment.component';
+import { UsersDataComponent } from './users-data/users-data.component';
+import { AllPostsAndCommentComponent } from './all-posts-and-comment/all-posts-and-comment.component';
+import { ManageMenuComponent } from './manage-menu/manage-menu.component';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
+import { AddMenuComponent } from './add-menu/add-menu.component';
+import { MenuNavComponent } from './menu-nav/menu-nav.component';
 
 
 
@@ -78,7 +92,19 @@ import { ChangeAddressComponent } from './change-address/change-address.componen
     ChangePhoneComponent,
     ChangeDobComponent,
     ChangePasswordComponent,
-    ChangeAddressComponent
+    ChangeAddressComponent,
+    ContactUsComponent,
+    OrderSummaryComponent,
+    OrderAddressComponent,
+    OrderNotesComponent,
+    OrderDetailsComponent,
+    OrderPaymentComponent,
+    UsersDataComponent,
+    AllPostsAndCommentComponent,
+    ManageMenuComponent,
+    EditMenuComponent,
+    AddMenuComponent,
+    MenuNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +113,9 @@ import { ChangeAddressComponent } from './change-address/change-address.componen
     ReactiveFormsModule,
     FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    JwPaginationModule,
+    FormsModule
   ],
   providers: [AuthService, ApiService,
     {

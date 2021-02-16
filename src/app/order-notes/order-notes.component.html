@@ -1,0 +1,28 @@
+
+<div id="goBack">
+  <fa-icon id="backIcon" [icon]="lArrowIcon" size="2x" (click)="goBackTo()"></fa-icon>
+</div>
+
+
+  <div id="additionalNotesDiv">
+    <h3 class="orderH3">Remarks</h3>
+  <form [formGroup]="notesForm" (ngSubmit)="proceedToNext()">
+  <section>
+      <label for="orderNotes">Order Remark</label>
+      <textarea id="orderNotes" class="form-control" formControlName="orderNotes" cols="10" rows="3"></textarea>
+    </section>
+
+    <section>
+      <label for="deliveryNotes">Delivery Remark</label>
+      <textarea id="deliveryNotes" class="form-control" formControlName="deliveryNotes" cols="10" rows="3"></textarea>
+    </section>
+
+    <section>
+      <label for="additionalNote">Additional Remark</label>
+      <textarea id="additionalNote" class="form-control" formControlName="additionalNote" cols="10" rows="3"></textarea>
+    </section>
+
+    <button [disabled]="!notesForm.valid">Proceed <fa-icon id="rArrowIcon" [icon]="rArrowIcon" size="1x" (click)="goBackTo()"></fa-icon></button>
+
+  </form>
+</div>

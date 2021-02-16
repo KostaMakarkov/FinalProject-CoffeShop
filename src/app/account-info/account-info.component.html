@@ -18,6 +18,18 @@
                     <p *ngIf=loggedUser>{{loggedUser.lastname}}</p>
                     <button (click)="showChangeDiv('change-lastname')">Change</button>                
                 </section>
+
+                <section>
+                    <span>Date Of Birth:</span>
+                    <p *ngIf=loggedUser>{{loggedUser.dateOfBirth}}</p>
+                    <button (click)="showChangeDiv('change-dob')">Change</button>                
+                </section>
+
+                <section>
+                    <span>Email:</span>
+                    <p *ngIf=loggedUser>{{loggedUser.email}}</p>
+                    <button [disabled]="true">Change</button>                
+                </section>
     
     
                 <section>
@@ -28,15 +40,28 @@
 
 
                 <section id="addressDiv">
-                    <span>City</span>
-                    <p *ngIf=loggedUser>{{loggedUser.address.addressCity}}</p>
-                    <span>Street Address</span>
-                    <p *ngIf=loggedUser>{{loggedUser.address.addressStreet}}</p>
-                    <span>Apartment Number</span>
-                    <p *ngIf=loggedUser>{{loggedUser.address.addressApartment}}</p>
-                    <span>ZipCode</span>
-                    <p *ngIf=loggedUser>{{loggedUser.address.addressZip}}</p>
-                    <button (click)="showChangeDiv('change-address')">Change</button>                
+                    
+                    <div>
+                        <span>City</span>
+                        <p *ngIf=loggedUser>{{loggedUser.address.addressCity}}</p>
+                    </div>
+
+                    <div>
+                        <span>Street Address</span>
+                        <p *ngIf=loggedUser>{{loggedUser.address.addressStreet}}</p>
+                    </div>
+
+                    <div>
+                        <span>Apartment Number</span>
+                        <p *ngIf=loggedUser>{{loggedUser.address.addressApartment}}</p>
+                    </div>
+
+                    <div>
+                        <span>ZipCode</span>
+                        <p *ngIf=loggedUser>{{loggedUser.address.addressZip}}</p>
+                        <button (click)="showChangeDiv('change-address')">Change</button>      
+                    </div>    
+
                 </section>
 
     

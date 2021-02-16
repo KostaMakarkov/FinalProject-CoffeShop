@@ -11,6 +11,8 @@ export const environment = {
   orderUrl:"http://localhost:3000/order",
   usersUrl:"http://localhost:3000/users",
   menuOrderingPricesUrl:"http://localhost:3000/menuOrderingPrices",
+  contactUsUrl:"http://localhost:3000/technicalsupport",
+  reservationsUrl:"http://localhost:3000/reservations",
 
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   firebaseConfig : {

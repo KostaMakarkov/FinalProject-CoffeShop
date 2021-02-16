@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { UserDemo } from '../user-demo';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { CheckuserService } from '../checkuser.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 })
 export class ForumContentComponent implements OnInit {
 
-  constructor(private api:ApiService, private formBuilder:FormBuilder, private router:Router, private auth:AuthService) {};
+  constructor(private api:ApiService, private formBuilder:FormBuilder, private router:Router, private auth:AuthService, private checkUser:CheckuserService) {};
 
   commentForm:FormGroup;
 
@@ -30,6 +31,9 @@ export class ForumContentComponent implements OnInit {
   msg:string;
   loggedEmail:string = '';
   loggedUser:UserDemo;
+
+  showAddComment:boolean = false;
+  
 
 
 
@@ -56,6 +60,22 @@ export class ForumContentComponent implements OnInit {
 
   ngOnInit(): void {
 
+    const loggedId = localStorage.getItem('loggedId');
+    if(loggedId){
+      this.showAddComment = true;
+    }
+    if(this.checkUser.getCurrentUser()){
+      let loggedFireUser;  
+      this.checkUser.getCurrentUser().then( (user) => {
+        loggedFireUser = user;
+        if(loggedFireUser != null){
+          this.showAddComment = true;
+        };
+      });
+    };
+
+    
+
     this.commentForm = new FormGroup({
       'postId': new FormControl(''),
       'commentBody': new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -74,8 +94,6 @@ export class ForumContentComponent implements OnInit {
       this.api.getPostComments(tempPostId).subscribe(data => this.myForumComments= data);
       localStorage.removeItem('postId');
     }
-
-    let loggedUser = localStorage.getItem('user')
 
   }
 }

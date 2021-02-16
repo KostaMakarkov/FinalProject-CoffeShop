@@ -3,91 +3,63 @@
     <fa-icon id="backIcon" [icon]="backIcon" size="2x" (click)="goBackTo()"></fa-icon>
 </div>
 
-<div id="myMenu">
-<div id="myProducts">
-<div id="menuDivCoffee">
-<div id="h3Div"><h3>Coffee</h3></div>
-    <div id="displayMenuDivCoffee">
-        <div id="menuCoffee" *ngFor="let dish of myCoffeeArry">
-            <div id="dishDivCoffee">
-                <h3>{{dish.dishName}} <fa-icon id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
-                <p id="dishDescription"><span>{{dish.dishDescription}}</span></p>
-                <div id="sizeSelect">
-                    <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
-                        <label for="sizeSmall">{{dish.dishSize[0]}}</label>
-                        <button (click)="selectedSize(dish.dishPriceId[0].small, dish.dishName, dish.dishPrice[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
-                    </section>
+<div id="backToTop">
+    <fa-icon id="upIcon" [icon]="upIcon" size="2x" (click)="navigateToSection('menuCategory')"></fa-icon>
+</div>
 
-                    <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
-                        <label for="sizeMedium">{{dish.dishSize[1]}}</label>
-                        <button (click)="selectedSize(dish.dishPriceId[1].medium, dish.dishName, dish.dishPrice[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
-                    </section>
-
-                    <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
-                        <label for="sizeLarge">{{dish.dishSize[2]}}</label>
-                        <button (click)="selectedSize(dish.dishPriceId[2].large, dish.dishName, dish.dishPrice[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
-                    </section>
-                </div>
-            </div>
-            <div id="imgDiv">
-                <img src="{{dish.dishPicture}}">
-            </div>
-        </div>
+<div id="menuCategory">
+    <div id="appetizersDiv">
+        <a fragment="account-about" (click)="navigateToSection('appetizers')"><h3>Appetizers</h3></a> 
+    </div>
+    <div id="entreesDiv">
+        <a fragment="account-about" (click)="navigateToSection('entrees')"><h3>Entrees</h3></a>
+    </div>
+    <div id="hotBeveragesDiv">
+        <a fragment="account-about" (click)="navigateToSection('hotBeverages')"><h3>Hot Beverages</h3></a>
+    </div>
+    <div id="coldBeveragesDiv">
+        <a fragment="account-about" (click)="navigateToSection('coldBeverages')"><h3>Cold Beverages</h3></a>
+    </div>
+    <div id="dessertsDiv">
+        <a fragment="account-about" (click)="navigateToSection('desserts')"><h3>Dessert</h3></a>
     </div>
 </div>
 
-<div id="menuDivHotChocolate">
-    <div id="h3Div"><h3>Hot Chocolate</h3></div>
-        <div id="displayMenuDivHotChocolate">
-            <div id="menuHotChocolate" *ngFor="let dish of myHotChocolateArry">
-                <div id="dishDivHotChocolate">
-                    <h3>{{dish.dishName}} <fa-icon id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
-                    <p id="dishDescription"><span>{{dish.dishDescription}}</span></p>
-                    <div id="sizeSelect">
-                        <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
-                            <label for="sizeSmall">{{dish.dishSize[0]}}</label>
-                            <button (click)="selectedSize(dish.dishPriceId[0].small, dish.dishName, dish.dishPrice[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
-                        </section>
-    
-                        <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
-                            <label for="sizeMedium">{{dish.dishSize[1]}}</label>
-                            <button (click)="selectedSize(dish.dishPriceId[1].medium, dish.dishName, dish.dishPrice[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
-                        </section>
-    
-                        <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
-                            <label for="sizeLarge">{{dish.dishSize[2]}}</label>
-                            <button (click)="selectedSize(dish.dishPriceId[2].large, dish.dishName, dish.dishPrice[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
-                        </section>
+<div id="myMenu">
+<div id="myProducts">
+
+    <div class="menuDiv" id="appetizers">
+        <div id="h3Div"><h3>Appetizers</h3></div>
+            <div class="displayMenuDiv">
+                <div class="menu" *ngFor="let dish of myAppetizersArry">
+                    <div class="dishDiv">
+                        <h3>{{dish.dishName}} <fa-icon *ngIf="dish.dishVeganOption" id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
+                        <p id="dishDescription"><span>{{dish.dishDescription}}</span></p>
+                        <div id="sizeSelect">
+                            <section class="dishPriceSection">
+                                <label for="dishPriceBtn">{{dish.dishPrice | currency:'ILS':'symbol'}}</label>
+                                <button (click)="selectedDish(dish)" id="dishPriceBtn">ADD</button>
+                            </section>
+                        </div>
                     </div>
-                </div>
-                <div id="imgDiv">
-                    <img src="{{dish.dishPicture}}">
+                    <div id="imgDiv">
+                        <img src="{{dish.dishPicture}}">
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
 
-        <div id="menuDivTea">
-            <div id="h3Div"><h3>Tea</h3></div>
-                <div id="displayMenuDivTea">
-                    <div id="menuTea" *ngFor="let dish of myTeaArry">
-                        <div id="dishDivTea">
-                            <h3>{{dish.dishName}} <fa-icon id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
+        <div class="menuDiv" id="entrees">
+            <div id="h3Div"><h3>Entrees</h3></div>
+                <div class="displayMenuDiv">
+                    <div class="menu" *ngFor="let dish of myEntreesArry">
+                        <div class="dishDiv">
+                            <h3>{{dish.dishName}} <fa-icon *ngIf="dish.dishVeganOption" id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
                             <p id="dishDescription"><span>{{dish.dishDescription}}</span></p>
                             <div id="sizeSelect">
-                                <section  *ngIf="dish.dishPrice[0]" id="smallSizeSection">
-                                    <label for="sizeSmall">{{dish.dishSize[0]}}</label>
-                                    <button (click)="selectedSize(dish.dishPriceId[0].small, dish.dishName, dish.dishPrice[0])" id="sizeSmall">{{dish.dishPrice[0] | currency:'ILS':'symbol'}}</button>
-                                </section>
-            
-                                <section *ngIf="dish.dishPrice[1]" id="mediumSizeSection">
-                                    <label for="sizeMedium">{{dish.dishSize[1]}}</label>
-                                    <button (click)="selectedSize(dish.dishPriceId[1].medium, dish.dishName, dish.dishPrice[1])" id="sizeMedium">{{dish.dishPrice[1] | currency:'ILS':'symbol'}}</button>
-                                </section>
-            
-                                <section *ngIf="dish.dishPrice[2]" id="largeSizeSection">
-                                    <label for="sizeLarge">{{dish.dishSize[2]}}</label>
-                                    <button (click)="selectedSize(dish.dishPriceId[2].large, dish.dishName, dish.dishPrice[2])" id="sizeLarge">{{dish.dishPrice[2] | currency:'ILS':'symbol'}}</button>
+                                <section class="dishPriceSection">
+                                    <label for="dishPriceBtn">{{dish.dishPrice | currency:'ILS':'symbol'}}</label>
+                                    <button (click)="selectedDish(dish)" id="dishPriceBtn">ADD</button>
                                 </section>
                             </div>
                         </div>
@@ -97,6 +69,68 @@
                     </div>
                 </div>
             </div>
+
+            <div class="menuDiv" id="desserts">
+                <div id="h3Div"><h3>Desserts</h3></div>
+                    <div class="displayMenuDiv">
+                        <div class="menu" *ngFor="let dish of myDessertArry">
+                            <div class="dishDiv">
+                                <h3>{{dish.dishName}} <fa-icon *ngIf="dish.dishVeganOption" id="veganIcon" [icon]="veganIcon" size="1x"></fa-icon></h3>
+                                <p id="dishDescription"><span>{{dish.dishDescription}}</span></p>
+                                <div id="sizeSelect">
+                                    <section class="dishPriceSection">
+                                        <label for="dishPriceBtn">{{dish.dishPrice | currency:'ILS':'symbol'}}</label>
+                                        <button (click)="selectedDish(dish)" id="dishPriceBtn">ADD</button>
+                                    </section>
+                                </div>
+                            </div>
+                            <div id="imgDiv">
+                                <img src="{{dish.dishPicture}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menuDiv" id="hotBeverages">
+                    <div id="h3Div"><h3>Hot Beverages</h3></div>
+                        <div id="displayBeveragesDiv">
+                            <div class="menuBeverage" *ngFor="let dish of myHotBeverages">
+                                <div class="beverageDiv">
+                                    <h3>{{dish.dishName}} <fa-icon id="veganIcon" *ngIf="dish.dishVeganOption" [icon]="veganIcon" size="1x"></fa-icon></h3>
+                                    <div id="sizeSelect">
+                                        <section class="dishPriceSection">
+                                            <label for="dishPriceBtn">{{dish.dishPrice | currency:'ILS':'symbol'}}</label>
+                                            <button (click)="selectedDish(dish)" id="dishPriceBtn">ADD</button>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div id="imgDiv">
+                                    <img src="{{dish.dishPicture}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+            <div class="menuDiv" id="coldBeverages">
+                <div id="h3Div"><h3>Cold Beverages</h3></div>
+                    <div id="displayBeveragesDiv">
+                        <div class="menuBeverage" *ngFor="let dish of myColdBeverages">
+                            <div class="beverageDiv">
+                                <h3>{{dish.dishName}} <fa-icon id="veganIcon" *ngIf="dish.dishVeganOption" [icon]="veganIcon" size="1x"></fa-icon></h3>
+                                <div id="sizeSelect">
+                                    <section class="dishPriceSection">
+                                        <label for="dishPriceBtn">{{dish.dishPrice | currency:'ILS':'symbol'}}</label>
+                                        <button (click)="selectedDish(dish)" id="dishPriceBtn">ADD</button>
+                                    </section>
+                                </div>
+                            </div>
+                            <div id="imgDiv">
+                                <img src="{{dish.dishPicture}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </div>
 <div id="showOrderDiv">
     <div id="orderDiv">
@@ -109,9 +143,9 @@
         <span>Order Sum</span> {{totalSum | currency:'ILS':'symbol'}}
     </div>
     <div id="proceedToPay">
-        <button (click)="proceedToCheckout()">Proceed To CheckOut</button>
+        <button class="btnStyle" (click)="proceedToCheckout()">Proceed To CheckOut</button>
         <p>{{errMsg}}</p>
-        <button (click)="clearOrder()">Clear Order</button>
+        <button class="btnStyle" (click)="clearOrder()">Clear Order</button>
     </div>
 </div>
 </div>

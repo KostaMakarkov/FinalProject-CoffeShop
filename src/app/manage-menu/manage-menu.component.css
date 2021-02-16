@@ -1,0 +1,190 @@
+
+
+#showMenuDiv{
+    width: 90%;
+    margin: auto;
+}
+
+
+table{
+    width: 98%;
+    margin: 25px auto;
+    border-radius: 5px;
+    text-align: center;
+    font-family: cursive;
+}
+
+
+h3{
+    text-align: center;
+    margin: 25px;
+    font-weight: 600;
+    color: #20150a;
+    text-decoration: underline;
+    font-family: cursive;
+}
+
+thead{
+    background-color: #20150a;
+    color: bisque;
+}
+tr:hover{
+    transition: 450ms;
+    background-color: #20150a;
+}
+
+tbody{
+    background-color: #7e5428c4;
+    color: bisque;
+    border: 2px solid #533210;
+    border-radius: 5px;
+}
+
+.tDishName{
+        width: 5%;
+        vertical-align: middle;
+        border-bottom: 2px solid #533210;
+        border-right: 2px solid #533210;
+}
+.tDishPic{
+    width: 10%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDishCategory{
+    width: 5%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDishSize{
+    width: 10%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.sizeNprice{
+    display: inline-block;
+    width: 48%;
+}
+.tDishDescription{
+    width: 20%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDishVegan{
+    width: 1%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDishChange{
+    width: 1%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDishDelete{
+    width: 1%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDishChange{
+    width: 1%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+
+button{
+    background-color: #533210;
+    color: bisque;
+    border: 2px solid bisque;
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+    width: 70px;
+}
+button:hover{
+    background-color: bisque;
+    color: #533210;
+    border: 2px solid #533210;
+    font-weight: 600;
+}
+
+#goBack{
+    position: absolute;
+    top: 305px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4b3424;
+    background-color: moccasin;
+    border-radius: 50%;
+    border: 2px solid moccasin;
+}
+#goBack:hover{
+    color: moccasin;
+    background-color: #4b3424;
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+#deleteIcon{
+    color: moccasin;
+    cursor: pointer;
+}
+#deleteIcon:hover{
+    color: red;
+}
+
+#categoryOptionDiv{
+    width: 35%;
+    margin: auto;
+    text-align: center;
+}
+
+#categoryOptionDiv label{
+    background-color: beige;
+    padding: 5px;
+    font-family: cursive;
+    color: #4b3424;
+    font-weight: 600;
+    margin-right: 10px;
+    width: 160px;
+    border: 5px solid #4b3424;
+    border-radius: 10px;
+}
+
+#categoryOption{
+    display: inline-block;
+    width: 50%;
+    margin: 25px auto;
+    height: 45px;
+    background: #4b3424;
+    color: moccasin;
+    font-weight: 600;
+    font-family: cursive;
+    border: 5px solid moccasin;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+@media(max-width:800px){
+
+    #backIcon{
+        top: 123px;
+    }
+    #postsNcommentsDiv{
+        margin: 55px 5px 5px 5px;
+        width: 97%;
+    }
+    #postsDisplay h3{
+        font-size: 15px;
+    }
+    #postsDisplay table{
+        font-size: 8px;
+    }
+}

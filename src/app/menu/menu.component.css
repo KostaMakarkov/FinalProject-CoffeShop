@@ -1,4 +1,67 @@
 
+
+#menuCategory{
+    width: 65%;
+    margin: 15px auto;
+    font-family: cursive;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: moccasin;
+    border: 3px solid brown;
+    border-radius: 65px;
+}
+
+#appetizersDiv, #entreesDiv, #hotBeveragesDiv, #coldBeveragesDiv, #dessertsDiv{
+    width: 15%;
+    height: 110px;
+    margin: 25px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 40px;
+    cursor: pointer;
+}
+#appetizersDiv h3, #entreesDiv h3, #hotBeveragesDiv h3, #coldBeveragesDiv h3, #dessertsDiv h3{
+    width: 100%;
+    margin: auto;
+    background: #ffffff57;
+    border-radius: 15px;
+    color: #3f1906;
+    font-weight: 600;
+}
+#appetizersDiv{
+    background-image: url('../../assets/menu/appetizers1.jpeg');
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+    background-size: contain;
+}
+#entreesDiv{
+    background-image: url('../../assets/menu/entree.jpeg');
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+    background-size: contain;
+}
+#hotBeveragesDiv{
+    background-image: url('../../assets/menu/hotbeverages.jpeg');
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+    background-size: contain;
+}
+#coldBeveragesDiv{
+    background-image: url('../../assets/menu/coldbeverages.jpeg');
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+    background-size: contain;
+}
+#dessertsDiv{
+    background-image: url('../../assets/menu/dessert.jepg.jpg');
+    border-radius: 50%;
+    border: 2px solid #4b3424;
+    background-size: contain;
+}
+
+
+
 #myMenu{
     font-family: cursive;
     display: flex;
@@ -13,12 +76,36 @@ span{
 #veganIcon{
     color: green;
 }
-#menuDivCoffee, #menuDivHotChocolate, #menuDivTea{
+.menuDiv{
     display: flex;
     flex-wrap: wrap;
 }
-#displayMenuDivCoffee, #displayMenuDivHotChocolate, #displayMenuDivTea{
+.displayMenuDiv{
     width: 90%;
+    margin: 10px 0px 10px 0px;
+}
+#displayBeveragesDiv{
+    width: 90%;
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.menuBeverage{
+    width: 38%;
+    margin: 15px 0px 15px 20px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid brown;
+    border-radius: 15px;
+    background-color: moccasin;
+}
+#menuCategory a h3{
+    font-size: 20px;
+}
+#beverageDiv{
+    width: 54%;
 }
 #h3Div{
     width: 10%;
@@ -28,48 +115,62 @@ span{
     position: sticky;
     top: 150px;
     color: #4b3424;
+    font-size: 23px;
     font-weight: 600;
     margin: 2px;
     border-bottom: 5px solid #4b3424;
     border-radius: 15px;
 }
-#menuCoffee, #menuHotChocolate, #menuTea{
+.menu{
     margin: 15px 0px 15px 20px;
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
     border: 5px solid brown;
     border-radius: 15px;
+    background-color: moccasin;
 }
 
-#dishDivCoffee, #dishDivHotChocolate, #dishDivTea{
-    width: 30%;
+.dishDiv{
+    width: 72%;
 }
-#dishDivCoffee h3, #dishDivHotChocolate h3, #dishDivTea h3{
+.dishDiv h3, .beverageDiv h3{
     margin: 15px;
     text-align: center;
     color: #4b3424;
     font-weight: 600;
+    font-size: 20px;
     text-decoration: underline;
+    width: 225px;
 }
-#menuCoffee img, #menuHotChocolate img, #menuTea img{
+.menu img{
     display: block;
-    width: 600px;
-    height: 400px;
+    width: 235px;
+    height: 150px;
     border: 5px solid #4b3424;
     border-radius: 50%;
     margin: auto;
 }
 #imgDiv{
-    width: 68%;
+    width: 23%;
+    padding: 15px;
+}
+#displayBeveragesDiv #imgDiv img{
+    display: block;
+    width: 155px;
+    height: 150px;
+    border: 5px solid #4b3424;
+    border-radius: 50%;
+    margin: auto;
 }
 #dishDescription, #dishPrice, #dishSize, #dishVeganOption{
     margin: 25px 0px 25px 0px;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 15px;
     color: #4b3424;
+    width: 645px;
 }
-button{
+.btnStyle{
     display: block;
     width: 245px;
     height: 40px;
@@ -80,7 +181,7 @@ button{
     background-color: #4b3424;
     color: burlywood;
 }
-button:hover{
+.btnStyle:hover{
     background-color: burlywood;
     color:  #4b3424;
     background-color: moccasin;
@@ -90,7 +191,7 @@ button:hover{
 
 #showOrderDiv{
     width: 20%;
-    padding: 15px 5px 25px 5px;
+    padding: 22px 5px 25px 5px;
     text-align: center;
 }
 #orderDiv{
@@ -108,18 +209,33 @@ button:hover{
     margin-top: 0px;
     background-color: #4b3424;
     color: burlywood;
+    cursor: default;
 }
-#sizeSmall:hover, #sizeMedium:hover, #sizeLarge:hover{
-    background-color: burlywood;
-    color:  #4b3424;
+#dishPriceBtn{
+    display: inline;
+    width: 130px;
+    height: 40px;
+    border-radius: 15px;
+    border: 0px;
+    margin: auto;
+    margin-top: 0px;
+    background-color: #4b3424;
+    color: burlywood;
+}
+#dishPriceBtn:hover{
+    background-color: moccasin;
+    color: #4b3424;
     border: 2px solid #4b3424;
-    transition: 700ms;
+}
+#dishPriceBtn:active{
+    background-color: #4b3424;
+    color: burlywood;
 }
 label{
-    margin: 5px 40px 30px 0px;
+    margin: 7px 5px 5px 0px;
     font-weight: 600;
-    width: 50px;
-    padding-left: 15px;
+    width: 100px;
+    text-align: center;
 }
 #orderDivItems{
     border-bottom: 5px solid #4b3424;
@@ -127,16 +243,26 @@ label{
     margin-bottom: 10px;
 }
 #smallSizeSection, #mediumSizeSection, #largeSizeSection{
-    background-color: moccasin;
-    width: 220px;
+    background-color: burlywood;
+    width: 235px;
     height: 40px;
     border-radius: 15px;
-    margin: 15px 0px 15px 0px;
+    margin: 15px 20px 15px 0px;
+    display: inline-block;
+}
+.dishPriceSection{
+    background-color: burlywood;
+    width: 235px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 15px 20px 15px 0px;
+    display: inline-block;
 }
 #orderDiv{
     border: 5px solid #4b3424;
     border-radius: 15px;
     padding: 9px;
+    background-color: moccasin;
 }
 
 P{
@@ -164,6 +290,26 @@ P{
     color: moccasin;
     background-color: #4b3424;
     border-radius: 50%;
+    border: 2px solid #4b3424;
+}
+
+#backToTop{
+    color: #4b3424;
+    background-color: moccasin;
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: fixed;
+    right: 25px;
+    border: 2px solid moccasin;
+    cursor: pointer;
+    top: 700px;
+}
+
+#backToTop:hover{
+    color: moccasin;
+    background-color: #4b3424;
     border: 2px solid #4b3424;
 }
 

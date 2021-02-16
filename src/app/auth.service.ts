@@ -22,7 +22,7 @@ export class AuthService {
 
   signOut():any{
     localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    localStorage.removeItem('loggedId');
     this.router.navigate(['/']);
   };
 

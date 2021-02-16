@@ -1,0 +1,96 @@
+
+
+
+table{
+    display: block;
+    width: 80%;
+    margin:25px auto;
+    font-family: cursive;
+}
+
+h3{
+    font-family: cursive;
+    color: #20150a;
+    text-align: center;
+    margin: 25px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+thead{
+    background-color: #20150a;
+    color: bisque;
+}
+
+tbody{
+    background-color: #7e5428c4;
+    color: bisque;
+    border: 2px solid #533210;
+    border-radius: 5px;
+}
+.tID{
+    width: 13%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tDetails{
+        width: 10%;
+        vertical-align: middle;
+        border-bottom: 2px solid #533210;
+        border-right: 2px solid #533210;
+}
+.tDetailsP{
+    display: block;
+    margin: 2px;
+    
+}
+.tAddress{
+    width: 15%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tPosition{
+    width: 5%;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tPositionChange{
+    width: 15%;
+    vertical-align: middle;
+    border-bottom: 2px solid #533210;
+    border-right: 2px solid #533210;
+}
+.tPositionChange button{
+    width: 80px;
+    height: 40px;
+    border: 2px solid #4b3424;
+    background-color: burlywood;
+    color: #4b3424;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 5px;
+}
+.tPositionChange button:hover{
+    border: 2px solid burlywood;
+    background-color:  #4b3424;
+    color: burlywood;
+}
+
+
+
+@media(max-width:800px){
+
+    table{
+        margin: 55px 5px 5px 5px;
+        width: 98%;
+        font-size: 8px;
+    }
+
+
+
+
+}

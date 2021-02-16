@@ -1,0 +1,52 @@
+
+
+
+<div id="addDishDiv">
+    <h3>Add new dish</h3>
+    <div id="addDishForm">
+
+        <form [formGroup]="newDishForm" (ngSubmit)="addDish()">
+
+            <section class="inputSection">
+                <label for="nameInput">Dish Name</label>
+                <input type="text" id="nameInput" class="form-control" formControlName="dishName" placeholder="Enter new dish name">
+                <span class="help-block" *ngIf="!newDishForm.get('dishName').valid && newDishForm.get('dishName').touched">Must enter dish name</span>
+            </section>
+
+            <section class="inputSection">
+                <label for="picInput">Dish Picture</label>
+                <input type="text" id="picInput" class="form-control" formControlName="dishPicture" placeholder="Enter picture Url">
+                <span class="help-block" *ngIf="!newDishForm.get('dishPicture').valid && newDishForm.get('dishPicture').touched">Must Enter a picture URL</span>
+            </section>
+
+            <section class="inputSection">
+                <label for="categoryInput">Dish Category</label>
+                <input type="text" id="categoryInput" class="form-control" formControlName="dishCategory" placeholder="Enter dish Category">
+                <span class="help-block" *ngIf="!newDishForm.get('dishCategory').valid && newDishForm.get('dishCategory').touched">Must Enter a category</span>
+            </section>
+
+            <section class="inputSection">
+                <label for="priceInput">dish Price</label>
+                <input type="number" id="priceInput" class="form-control" formControlName="dishPrice" placeholder="Enter dish price">
+                <span class="help-block" *ngIf="!newDishForm.get('dishPrice').valid && newDishForm.get('dishPrice').touched">Must enter price</span>
+            </section>
+
+            <section id="textareaSection">
+                <label for="descriptionInput" id="textareaLabel">Dish Description</label>
+                <textarea  id="descriptionInput"  class="form-control" formControlName="dishDescription" placeholder="Enter dish description" cols="30" rows="5"></textarea>
+                <span class="help-block" *ngIf="!newDishForm.get('dishDescription').valid && newDishForm.get('dishDescription').touched">Must enter description</span>
+            </section>
+
+            <section class="veganSection">
+                <label for="veganInput">Dish Vegan Option</label>
+                <input type="checkbox" id="veganInput" class="form-control" formControlName="dishVeganOption">
+            </section>
+
+            <button [disabled]="!newDishForm.valid">Add</button>
+
+            <span id="orderMsg">{{msg}}</span>
+
+        </form>
+
+    </div>
+</div>

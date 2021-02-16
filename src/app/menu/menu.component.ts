@@ -1,10 +1,8 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { MenuDemo } from '../menu-demo';
-import { faSeedling, faCheckDouble, faThumbsDown, faPlus, faTrashAlt, faArrowAltCircleLeft} from '@fortawesome/free-solid-svg-icons';
-import { stringify } from '@angular/compiler/src/util';
+import { faSeedling, faCheckDouble, faThumbsDown, faPlus, faTrashAlt, faArrowAltCircleLeft, faArrowAltCircleUp} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
-import { Orderdemo } from '../orderdemo';
 import { DishPrice } from '../dish-price';
 import { DishNameAndPrice } from '../DishNameAndPrice';
 
@@ -18,11 +16,11 @@ export class MenuComponent implements OnInit {
 
   constructor(private api:ApiService, private router:Router) { }
 
-
-  myCoffeeArry:MenuDemo[]=[];
-  myHotChocolateArry:MenuDemo[]=[];
-  myTeaArry:MenuDemo[]=[];
-  menuOrderingPrices:MenuDemo[]=[];
+  myAppetizersArry:MenuDemo[]=[];
+  myEntreesArry:MenuDemo[]=[];
+  myColdBeverages:MenuDemo[]=[];
+  myHotBeverages:MenuDemo[]=[];
+  myDessertArry:MenuDemo[]=[];
 
 
   veganIcon = faSeedling;
@@ -30,6 +28,7 @@ export class MenuComponent implements OnInit {
   plusIcon = faPlus;
   trashIcon = faTrashAlt;
   backIcon = faArrowAltCircleLeft;
+  upIcon = faArrowAltCircleUp;
   activateIcon:boolean = false; 
 
   cartList:DishPrice[] = [];
@@ -49,20 +48,25 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  navigateToSection(section: string) {
+    window.location.hash = '';
+    window.location.hash = section;
+}
 
-  selectedSize(dishId, name, price){
-    const newDish = new DishPrice(dishId);
+
+  selectedDish(dish){
+    const newDish = new DishPrice(dish.dishId);
     this.cartList.push(newDish);
     const newDishString = JSON.stringify(this.cartList);
     localStorage.setItem('dishId', newDishString);
 
     //---------------------------------------------//
 
-    const checkOutDish = new DishNameAndPrice(name, price, dishId);
+    const checkOutDish = new DishNameAndPrice(dish.dishName, dish.dishPrice, dish.dishId);
     this.showCurrentOrder.push(checkOutDish);
     const checkOutDishString = JSON.stringify(this.showCurrentOrder);
     localStorage.setItem('addDish', checkOutDishString);
-    this.totalSum += price;
+    this.totalSum += Number(dish.dishPrice);
   };
 
 
@@ -87,20 +91,21 @@ export class MenuComponent implements OnInit {
     }
     else{
       this.api.getCurrentOrders(cartToServer).subscribe(data => this.currentOrder = data);
-      this.router.navigate(['checkout']);
+      this.router.navigate(['/order-summary']);
     }
   }
 
-  check(){
-    console.log(this.cartList);
-    console.log(this.showCurrentOrder);
-    
-  }
 
   ngOnInit(): void {
-    this.api.getDishesByCategory(`COFFEE`).subscribe(data => this.myCoffeeArry = data);
-    this.api.getDishesByCategory(`CHOCOLATEMILK`).subscribe(data => this.myHotChocolateArry = data);
-    this.api.getDishesByCategory(`TEA`).subscribe(data => this.myTeaArry = data);
+    this.api.getDishesByCategory(`HotBeverage`).subscribe((data) => this.myHotBeverages = data);
+    this.api.getDishesByCategory(`ColdBeverages`).subscribe((data) => {
+      this.myColdBeverages = data
+      console.log(this.myColdBeverages);
+      
+    });
+    this.api.getDishesByCategory('Appetizer').subscribe((data) => {this.myAppetizersArry = data});
+    this.api.getDishesByCategory('Entree').subscribe((data) => this.myEntreesArry = data);
+    this.api.getDishesByCategory('Dessert').subscribe((data) => this.myDessertArry = data);
     let savedDishId = JSON.parse(localStorage.getItem('dishId'));
     let savedAddDish = JSON.parse(localStorage.getItem('addDish'));
     if(savedDishId){

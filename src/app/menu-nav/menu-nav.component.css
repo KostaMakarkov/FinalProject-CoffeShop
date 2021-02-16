@@ -1,0 +1,34 @@
+
+
+
+#manageMenuDiv ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: moccasin;
+    width: fit-content;
+    margin: auto;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+.menuDataLi{
+    margin: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+.menuDataLi a:hover{
+    background-color: #533210;
+    color: moccasin;
+}
+.menuDataLi a{
+    color: #4b3424;
+    border-radius: 5px;
+    background-color: #84521e73;
+    font-weight: 600;
+}
+
+.liClass{
+    display: inline-block;
+    margin: 5px;
+}

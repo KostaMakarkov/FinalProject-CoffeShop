@@ -3,20 +3,23 @@
     font-family: cursive;
     margin: 15px auto;
     background-color: moccasin;
-    border-radius: 5px
+    border-radius: 5px;
+    width: fit-content;
 }
 
 #navbarSupportedContent ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0px;
 }
 
-#accountInfoLi, #postsCommentsLi, #orderHistoryLi, #signOutLi{
+#accountInfoLi, #postsCommentsLi, #orderHistoryLi,#usersDataLi, #signOutLi{
     margin: 5px;
     cursor: pointer;
+    display: inline-block;
 }
-#accountInfoLi a, #postsCommentsLi a, #orderHistoryLi a, #signOutLi a{
+#accountInfoLi a, #postsCommentsLi a, #orderHistoryLi a,#usersDataLi a, #signOutLi a{
     color: #533210;
     border-radius: 5px;
     background-color: #84521e73;
@@ -24,9 +27,9 @@
 
 .liClass{
     display: inline-block;
-    margin: 0px 10px 0px 10px;
+    margin: 5px;
 }
-#accountInfoLi a:hover, #postsCommentsLi a:hover, #orderHistoryLi a:hover, #signOutLi a:hover{
+#accountInfoLi a:hover, #postsCommentsLi a:hover, #orderHistoryLi a:hover, #usersDataLi a:hover, #signOutLi a:hover{
     background-color: #533210;
     color: moccasin;
 }
