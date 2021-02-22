@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -10,7 +10,6 @@ import { ForumDemo } from './forum-demo';
 import { LastnameChange } from './lastname-change';
 import { MenuDemo } from './menu-demo';
 import { Orderdemo } from './orderdemo';
-import { Orderdetailsdemo } from './orderdetailsdemo';
 import { PasswordChange } from './password-change';
 import { PhoneChange } from './phone-change';
 import { ReservationDemo } from './reservation-demo';
@@ -31,7 +30,6 @@ export class ApiService {
   serverUrlMenu = environment.menuUrl;
   serverUrlOrder = environment.orderUrl;
   serverUrlUsers = environment.usersUrl;
-  serverUrlmenuOrderingPrices = environment.menuOrderingPricesUrl;
   serverUrlContact = environment.contactUsUrl;
   serverUrlReservations = environment.reservationsUrl;
 
@@ -117,9 +115,6 @@ export class ApiService {
     return this.http.post<Orderdemo[]>(this.serverUrlOrder, data);
   };
 
-  getMenuPriceIds():Observable<MenuDemo[]>{
-    return this.http.get<MenuDemo[]>(this.serverUrlmenuOrderingPrices);
-  }
   sendOrder(order):Observable<any[]>{
     return this.http.post<any[]>(`${this.serverUrlOrder}/orderSummary`, order);
   }
